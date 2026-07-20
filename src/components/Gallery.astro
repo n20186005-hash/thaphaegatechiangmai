@@ -1,8 +1,30 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import { getI18n } from '../i18n/ui';
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
-const photos = g.photos || [];
+
+let photoFiles = [];
+try {
+  const galleryDir = path.join(process.cwd(), 'public', 'gallery');
+  const files = fs.readdirSync(galleryDir);
+  photoFiles = files
+    .filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
+    .map(file => `/gallery/${file}`);
+} catch (e) {
+  console.error('Error reading gallery directory:', e);
+}
+
+const photos = photoFiles.length > 0 
+  ? photoFiles.map(src => {
+      const match = (g.photos || []).find(p => p.src === src);
+      return {
+        src,
+        caption: match?.caption || g.photoAlt || ''
+      };
+    })
+  : g.photos || [];
 ---
 
 <section id="gallery" class="section-padding" style="background: var(--bg-secondary);">
