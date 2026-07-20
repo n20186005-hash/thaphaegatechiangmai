@@ -2,12 +2,7 @@
 import { getI18n } from '../i18n/ui';
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
-const totalImages = 23;
-const images = Array.from({ length: totalImages }, (_, i) => {
-  const n = String(i + 1);
-  return `/gallery/tha-phae-gate-${n}.jpg`;
-});
-const photoAlts = g.photoAlts ?? images.map(() => g.photoAlt);
+const photos = g.photos || [];
 ---
 
 <section id="gallery" class="section-padding" style="background: var(--bg-secondary);">
@@ -16,9 +11,9 @@ const photoAlts = g.photoAlts ?? images.map(() => g.photoAlt);
     <p class="text-center text-lg mb-10" style="color: var(--text-secondary);">{g.subtitle}</p>
 
     <div class="gallery-grid" id="gallery-grid">
-      {images.map((src, index) => (
-        <button type="button" class="gallery-item" data-index={index} aria-label={photoAlts[index] ?? g.photoAlt}>
-          <img src={src} alt={photoAlts[index] ?? g.photoAlt} loading="lazy" />
+      {photos.map((photo, index) => (
+        <button type="button" class="gallery-item" data-index={index} aria-label={photo.caption ?? g.photoAlt}>
+          <img src={photo.src} alt={photo.caption ?? g.photoAlt} loading="lazy" />
         </button>
       ))}
     </div>

@@ -16,9 +16,9 @@ const items = q.items ?? [];
       <div class="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_2fr] divide-y md:divide-y-0 md:divide-x" style="border-color: var(--border-color);">
         {/* Table Header (hidden on mobile, visible on md+) */}
         <div class="hidden md:contents">
-          <div class="p-4 font-semibold text-sm tracking-wider uppercase" style="background: var(--bg-tertiary); color: var(--text-muted);">核心维度</div>
-          <div class="p-4 font-semibold text-sm tracking-wider uppercase" style="background: var(--bg-tertiary); color: var(--text-muted);">关键信息</div>
-          <div class="p-4 font-semibold text-sm tracking-wider uppercase" style="background: var(--bg-tertiary); color: var(--text-muted);">补充说明</div>
+          <div class="p-4 font-semibold text-sm tracking-wider uppercase" style="background: var(--bg-tertiary); color: var(--text-muted);">{q.colDimension || 'Dimension'}</div>
+          <div class="p-4 font-semibold text-sm tracking-wider uppercase" style="background: var(--bg-tertiary); color: var(--text-muted);">{q.colInfo || 'Information'}</div>
+          <div class="p-4 font-semibold text-sm tracking-wider uppercase" style="background: var(--bg-tertiary); color: var(--text-muted);">{q.colNotes || 'Notes'}</div>
         </div>
 
         {/* Table Rows */}

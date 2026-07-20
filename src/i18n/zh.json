@@ -160,6 +160,7 @@
       "photoTip": "🌅 城门朝东，清晨 6–8 点东侧侧光最适合拍摄古城墙与鸽群；日落前后的「蓝调时刻」是拍夜景的黄金窗口。",
       "weatherTip": "☀️ 清迈 3–5 月炎热，请备防晒与饮水；6–10 月为雨季，午后易有阵雨。",
       "weatherUrl": "https://www.tmd.go.th",
+      "weatherLink": "查看天气预报 ↗",
       "lightCaption": "建议抵达与蓝调时段",
       "arriveLabel": "建议抵达",
       "blueHourLabel": "蓝调时刻"
@@ -170,6 +171,9 @@
   "quickFactsDashboard": {
     "title": "塔佩门 · 速览",
     "intro": "一眼看懂这座清迈地标的核心信息。",
+    "colDimension": "核心维度",
+    "colInfo": "关键信息",
+    "colNotes": "补充说明",
     "items": [
       {
         "label": "城门属性",
@@ -553,43 +557,95 @@
     "photos": [
       {
         "src": "/gallery/tha-phae-gate-1.jpg",
-        "caption": "塔佩门城门与城墙"
+        "caption": "塔佩门城门外观"
       },
       {
         "src": "/gallery/tha-phae-gate-2.jpg",
-        "caption": "门前广场与鸽群"
+        "caption": "塔佩门前广场与鸽群"
       },
       {
         "src": "/gallery/tha-phae-gate-3.jpg",
-        "caption": "清晨的古城东门"
+        "caption": "清晨时分的塔佩门"
       },
       {
         "src": "/gallery/tha-phae-gate-4.jpg",
-        "caption": "护城河与城墙步道"
+        "caption": "清迈古城墙与护城河"
       },
       {
         "src": "/gallery/tha-phae-gate-5.jpg",
-        "caption": "塔佩路上的咖啡馆"
+        "caption": "塔佩路街景"
       },
       {
         "src": "/gallery/tha-phae-gate-6.jpg",
-        "caption": "城门夜景"
+        "caption": "塔佩门夜景"
       },
       {
         "src": "/gallery/tha-phae-gate-7.jpg",
-        "caption": "周日夜市起点"
+        "caption": "周日夜市起点的塔佩门"
       },
       {
         "src": "/gallery/tha-phae-gate-8.jpg",
-        "caption": "旅人与 locals 的相遇"
+        "caption": "旅客在塔佩门拍照"
       },
       {
         "src": "/gallery/tha-phae-gate-9.jpg",
-        "caption": "节日装饰的广场"
+        "caption": "节日期间的塔佩门广场"
       },
       {
         "src": "/gallery/tha-phae-gate-10.jpg",
-        "caption": "从城门望向古城"
+        "caption": "从塔佩门望向古城内部"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-11.jpg",
+        "caption": "古城东墙遗迹"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-12.jpg",
+        "caption": "城门前的集会人群"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-13.jpg",
+        "caption": "护城河上的倒影"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-14.jpg",
+        "caption": "塔佩门与蓝天"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-15.jpg",
+        "caption": "城门拱券细节"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-16.jpg",
+        "caption": "广场上的鸽子特写"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-17.jpg",
+        "caption": "夜市摊贩与城门"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-18.jpg",
+        "caption": "古城方向指示牌"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-19.jpg",
+        "caption": "塔佩门周边的寺庙"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-20.jpg",
+        "caption": "城门前的自行车与双条车"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-21.jpg",
+        "caption": "清晨无人的广场"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-22.jpg",
+        "caption": "城门与远处山景"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-23.jpg",
+        "caption": "塔佩门全景"
       }
     ],
     "photoAlt": "塔佩门实景照片",
@@ -636,7 +692,7 @@
     "subtitle": "基于公开记录的田野反馈（综合自公共档案与地理信息平台）。",
     "rating": "4.4 / 5",
     "total": "29,240 条评价",
-    "cta": "写下你的评价",
+    "cta": "📍 在 Google 地图上查看更多评价",
     "mapLabel": "在 Google 地图上查看位置",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
     "source": "数据综合自 Google 地图等公开评价平台",

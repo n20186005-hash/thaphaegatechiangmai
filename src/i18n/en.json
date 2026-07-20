@@ -160,6 +160,7 @@
       "photoTip": "🌅 The gate faces east — side-light from 6–8 am is best for the wall and pigeons; the blue hour after sunset is the golden window for night shots.",
       "weatherTip": "☀️ March–May is hot; bring sun protection and water. June–Oct is rainy season with afternoon showers.",
       "weatherUrl": "https://www.tmd.go.th",
+      "weatherLink": "Check weather forecast ↗",
       "lightCaption": "Arrival & blue hour",
       "arriveLabel": "Best to arrive",
       "blueHourLabel": "Blue hour"
@@ -170,6 +171,9 @@
   "quickFactsDashboard": {
     "title": "Tha Phae Gate · At a glance",
     "intro": "Everything you need to know about this Chiang Mai landmark at a glance.",
+    "colDimension": "Key dimension",
+    "colInfo": "Key information",
+    "colNotes": "Additional notes",
     "items": [
       {
         "label": "Gate type",
@@ -553,43 +557,95 @@
     "photos": [
       {
         "src": "/gallery/tha-phae-gate-1.jpg",
-        "caption": "Gate and city wall"
+        "caption": "Exterior of Tha Phae Gate"
       },
       {
         "src": "/gallery/tha-phae-gate-2.jpg",
-        "caption": "Square and pigeons"
+        "caption": "Square and pigeons in front of the gate"
       },
       {
         "src": "/gallery/tha-phae-gate-3.jpg",
-        "caption": "Gate at dawn"
+        "caption": "Tha Phae Gate in the early morning"
       },
       {
         "src": "/gallery/tha-phae-gate-4.jpg",
-        "caption": "Moat and wall path"
+        "caption": "Chiang Mai old city wall and moat"
       },
       {
         "src": "/gallery/tha-phae-gate-5.jpg",
-        "caption": "Cafés on Tha Phae Rd"
+        "caption": "Street view of Tha Phae Road"
       },
       {
         "src": "/gallery/tha-phae-gate-6.jpg",
-        "caption": "Gate at night"
+        "caption": "Night view of the gate"
       },
       {
         "src": "/gallery/tha-phae-gate-7.jpg",
-        "caption": "Start of Sunday Market"
+        "caption": "Gate at the start of the Sunday Market"
       },
       {
         "src": "/gallery/tha-phae-gate-8.jpg",
-        "caption": "Travelers meet locals"
+        "caption": "Travelers photographing at the gate"
       },
       {
         "src": "/gallery/tha-phae-gate-9.jpg",
-        "caption": "Festive square"
+        "caption": "Festive square at the gate"
       },
       {
         "src": "/gallery/tha-phae-gate-10.jpg",
-        "caption": "Looking into the old city"
+        "caption": "Looking from the gate into the old city"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-11.jpg",
+        "caption": "East wall remains"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-12.jpg",
+        "caption": "Crowd gathering in front of the gate"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-13.jpg",
+        "caption": "Reflection on the moat"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-14.jpg",
+        "caption": "Gate against the blue sky"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-15.jpg",
+        "caption": "Arch detail of the gate"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-16.jpg",
+        "caption": "Close-up of square pigeons"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-17.jpg",
+        "caption": "Night-market stalls and the gate"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-18.jpg",
+        "caption": "Old City direction signs"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-19.jpg",
+        "caption": "Temples near the gate"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-20.jpg",
+        "caption": "Bicycles and songthaews in front of the gate"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-21.jpg",
+        "caption": "Empty square at dawn"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-22.jpg",
+        "caption": "Gate with distant hills"
+      },
+      {
+        "src": "/gallery/tha-phae-gate-23.jpg",
+        "caption": "Panorama of Tha Phae Gate"
       }
     ],
     "photoAlt": "Photo of Tha Phae Gate",
@@ -636,7 +692,7 @@
     "subtitle": "Real feedback from travelers worldwide (aggregated from public platforms).",
     "rating": "4.4 / 5",
     "total": "29,240 reviews",
-    "cta": "Write a review",
+    "cta": "📍 View more reviews on Google Maps",
     "mapLabel": "View location on Google Maps",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
     "source": "Data aggregated from public review platforms such as Google Maps",
