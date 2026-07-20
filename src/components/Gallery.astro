@@ -7,10 +7,23 @@ const g = messages.gallery;
 
 let photoFiles = [];
 try {
+  const allowedFiles = [
+    'tha-phae-gate-20.jpg',
+    'tha-phae-gate-24.jpg',
+    'tha-phae-gate-25.jpg',
+    'tha-phae-gate-26.jpg',
+    'tha-phae-gate-27.jpg',
+    'tha-phae-gate-28.jpg',
+    'tha-phae-gate-29.jpg',
+    'tha-phae-gate-30.jpg',
+    'tha-phae-gate-31.jpg',
+    'tha-phae-gate-32.jpg',
+    'tha-phae-gate-33.jpg'
+  ];
   const galleryDir = path.join(process.cwd(), 'public', 'gallery');
   const files = fs.readdirSync(galleryDir);
-  photoFiles = files
-    .filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
+  photoFiles = allowedFiles
+    .filter(file => files.includes(file))
     .map(file => `/gallery/${file}`);
 } catch (e) {
   console.error('Error reading gallery directory:', e);
