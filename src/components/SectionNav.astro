@@ -4,12 +4,12 @@ const { lang, messages } = getI18n(Astro.url);
 const n = messages.stickyNav;
 const h = messages.header;
 const items = [
-  { label: n.facts, href: '#quick-facts' },
+  { label: n.facts?.label || n.facts, href: '#quick-facts' },
   { label: h.history, href: '#history' },
-  { label: n.transport, href: '#transport' },
-  { label: n.route, href: '#route' },
-  { label: n.visit, href: '#visit' },
-  { label: n.faq, href: '#faq' },
+  { label: n.transport?.label || n.transport, href: '#transport' },
+  { label: n.route?.label || n.route, href: '#route' },
+  { label: n.visit?.label || n.visit, href: '#visit' },
+  { label: n.faq?.label || n.faq, href: '#faq' },
 ];
 ---
 

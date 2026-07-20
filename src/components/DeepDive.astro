@@ -63,24 +63,35 @@ const audItems = aud.items ?? [];
         <div class="rounded-3xl p-6 md:p-8 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
           <h3 class="font-semibold text-2xl mb-2" style="color: var(--text-primary);">{plantGuide.seasonTitle}</h3>
           <p class="text-base leading-relaxed mb-6" style="color: var(--text-secondary);">{plantGuide.seasonSubtitle}</p>
-          <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
-            {plantSeasons.map((season) => (
-              <article class="rounded-2xl p-5 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
-                <div class="flex items-center gap-3 mb-3">
-                  {season.icon && <span class="text-2xl" aria-hidden="true">{season.icon}</span>}
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.18em]" style="color: var(--text-muted);">{season.badge}</p>
-                    <h4 class="font-semibold text-lg" style="color: var(--text-primary);">{season.name}</h4>
-                  </div>
+          
+          <div class="tabs-container" data-tab-group="seasons">
+            <div class="flex overflow-x-auto gap-2 mb-4 border-b" style="border-color: var(--border-color);" role="tablist">
+              {plantSeasons.map((season, i) => (
+                <button role="tab" aria-selected={i === 0 ? "true" : "false"} aria-controls={`season-tab-${i}`} class="px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors border-b-2 outline-none aria-selected:text-[var(--accent)] aria-selected:border-[var(--accent)] !border-transparent aria-selected:!border-[var(--accent)] hover:text-[var(--accent)]" style="color: var(--text-secondary);">
+                  {season.icon} {season.name}
+                </button>
+              ))}
+            </div>
+            <div class="tab-panels">
+              {plantSeasons.map((season, i) => (
+                <div id={`season-tab-${i}`} role="tabpanel" class={i === 0 ? "block animate-fade-in-up" : "hidden animate-fade-in-up"}>
+                  <article class="rounded-2xl p-5 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+                    <div class="flex items-center gap-3 mb-3">
+                      <div>
+                        <p class="text-xs uppercase tracking-[0.18em]" style="color: var(--text-muted);">{season.badge}</p>
+                        <h4 class="font-semibold text-lg" style="color: var(--text-primary);">{season.name}</h4>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary);">{season.summary}</p>
+                    <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
+                      {season.highlights.map((highlight) => (
+                        <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{highlight}</span></li>
+                      ))}
+                    </ul>
+                  </article>
                 </div>
-                <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary);">{season.summary}</p>
-                <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
-                  {season.highlights.map((highlight) => (
-                    <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{highlight}</span></li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -91,31 +102,63 @@ const audItems = aud.items ?? [];
       <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{aud.subtitle}</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 gap-5">
-      {audItems.map((item) => (
-        <div class="rounded-2xl p-6 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl" aria-hidden="true">{item.icon}</span>
-            <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{item.group}</h3>
-          </div>
-          <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary);"><span class="font-medium" style="color: var(--text-primary);">{aud.resonanceLabel}</span>{item.resonance}</p>
-          {item.routeTitle ? (
-            <div class="space-y-3">
-              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><span class="font-medium" style="color: var(--text-primary);">{aud.routeLabel}</span>{item.routeTitle}</p>
-              {item.stops && (
-                <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
-                  {item.stops.map((stop) => (
-                    <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{stop}</span></li>
-                  ))}
-                </ul>
+    <div class="max-w-4xl mx-auto tabs-container" data-tab-group="audience">
+      <div class="flex overflow-x-auto gap-2 mb-6 border-b" style="border-color: var(--border-color);" role="tablist">
+        {audItems.map((item, i) => (
+          <button role="tab" aria-selected={i === 0 ? "true" : "false"} aria-controls={`aud-tab-${i}`} class="px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors border-b-2 outline-none aria-selected:text-[var(--accent)] aria-selected:border-[var(--accent)] !border-transparent aria-selected:!border-[var(--accent)] hover:text-[var(--accent)]" style="color: var(--text-secondary);">
+            {item.group}
+          </button>
+        ))}
+      </div>
+      <div class="tab-panels">
+        {audItems.map((item, i) => (
+          <div id={`aud-tab-${i}`} role="tabpanel" class={i === 0 ? "block animate-fade-in-up" : "hidden animate-fade-in-up"}>
+            <div class="rounded-2xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+              <div class="flex items-center gap-3 mb-3">
+                <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{item.group}</h3>
+              </div>
+              <p class="text-sm sm:text-base leading-relaxed mb-4" style="color: var(--text-secondary);"><span class="font-medium mr-2" style="color: var(--text-primary);">{aud.resonanceLabel}</span>{item.resonance}</p>
+              {item.routeTitle ? (
+                <div class="space-y-4 bg-black/5 p-4 rounded-xl">
+                  <p class="text-sm font-medium" style="color: var(--text-primary);">{aud.routeLabel} {item.routeTitle}</p>
+                  {item.stops && (
+                    <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
+                      {item.stops.map((stop) => (
+                        <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{stop}</span></li>
+                      ))}
+                    </ul>
+                  )}
+                  <p class="text-sm leading-relaxed mt-4 pt-4 border-t border-black/10" style="color: var(--text-secondary);"><span class="font-medium mr-2" style="color: var(--text-primary);">{aud.tipLabel}</span>{item.tip}</p>
+                </div>
+              ) : (
+                <div class="bg-black/5 p-4 rounded-xl">
+                  <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><span class="font-medium mr-2" style="color: var(--text-primary);">{aud.tipLabel}</span>{item.tip}</p>
+                </div>
               )}
-              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><span class="font-medium" style="color: var(--text-primary);">{aud.tipLabel}</span>{item.tip}</p>
             </div>
-          ) : (
-            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><span class="font-medium" style="color: var(--text-primary);">{aud.tipLabel}</span>{item.tip}</p>
-          )}
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
+
+  <script is:inline>
+    document.querySelectorAll('.tabs-container').forEach(container => {
+      const tabs = container.querySelectorAll('[role="tab"]');
+      const panels = container.querySelectorAll('[role="tabpanel"]');
+      
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+          tab.setAttribute('aria-selected', 'true');
+          
+          panels.forEach(p => p.classList.add('hidden'));
+          panels.forEach(p => p.classList.remove('block'));
+          
+          panels[index].classList.remove('hidden');
+          panels[index].classList.add('block');
+        });
+      });
+    });
+  </script>
 </section>

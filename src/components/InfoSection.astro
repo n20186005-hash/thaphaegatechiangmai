@@ -9,25 +9,26 @@ const { embedded = false } = Astro.props;
 
 {embedded ? (
   <div>
-    <div class="space-y-12">
-      {sections.map((section, index) => (
-        <div class={`flex flex-col md:flex-row gap-6 items-start ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-          <div class="flex-1 w-full bg-white/5 p-8 rounded-2xl border border-white/10 shadow-sm">
-            <div class="flex items-center gap-4 mb-4">
-              <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg" style="background: var(--accent); color: white;">
-                {index + 1}
-              </div>
-              <h3 class="font-display text-2xl font-semibold" style="color: var(--text-primary);">{section.title}</h3>
-            </div>
-            <div class="ml-14 mt-4">
-              <p class="text-lg leading-relaxed" style="color: var(--text-secondary);">{section.content}</p>
+    <div class="relative pl-6 md:pl-10 border-l-2" style="border-color: color-mix(in srgb, var(--accent) 30%, transparent);">
+      <div class="space-y-12">
+        {sections.map((section, index) => (
+          <div class="relative">
+            {/* Timeline Dot */}
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full border-4 shadow-sm" style="background: var(--bg-tertiary); border-color: var(--accent);"></div>
+            
+            <div class="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10 shadow-sm transition-colors hover:bg-white/10">
+              <h3 class="font-display text-xl md:text-2xl font-semibold mb-4" style="color: var(--text-primary);">
+                <span style="color: var(--accent);">{section.title.split('·')[0]}</span>
+                {section.title.includes('·') && <span class="opacity-80">· {section.title.split('·')[1]}</span>}
+              </h3>
+              <p class="text-base md:text-lg leading-relaxed" style="color: var(--text-secondary);">{section.content}</p>
 
               {section.cards && section.cards.length > 0 && (
                 <div class="mt-6 space-y-6">
-                  <div class="grid gap-4 md:grid-cols-3">
+                  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {section.cards.map((card: any) => (
-                      <article class="rounded-2xl p-5 border h-full bg-white shadow-sm" style="border-color: var(--border-color);">
-                        <h4 class="font-semibold text-lg mb-3" style="color: var(--text-primary);">{card.title}</h4>
+                      <article class="rounded-xl p-5 border h-full bg-white shadow-sm" style="border-color: var(--border-color);">
+                        <h4 class="font-semibold text-base mb-2" style="color: var(--text-primary);">{card.title}</h4>
                         <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{card.text}</p>
                       </article>
                     ))}
@@ -36,14 +37,14 @@ const { embedded = false } = Astro.props;
                   {(section.fieldNote || section.academicNote) && (
                     <div class="grid gap-4 md:grid-cols-2">
                       {section.fieldNote && (
-                        <div class="rounded-2xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
-                          <h4 class="font-semibold text-base mb-2" style="color: var(--text-primary);">{section.fieldNote.title}</h4>
+                        <div class="rounded-xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+                          <h4 class="font-semibold text-sm uppercase tracking-wider mb-2" style="color: var(--accent);">{section.fieldNote.title}</h4>
                           <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{section.fieldNote.text}</p>
                         </div>
                       )}
                       {section.academicNote && (
-                        <div class="rounded-2xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
-                          <h4 class="font-semibold text-base mb-2" style="color: var(--text-primary);">{section.academicNote.title}</h4>
+                        <div class="rounded-xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+                          <h4 class="font-semibold text-sm uppercase tracking-wider mb-2" style="color: var(--accent);">{section.academicNote.title}</h4>
                           <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{section.academicNote.text}</p>
                         </div>
                       )}
@@ -53,8 +54,8 @@ const { embedded = false } = Astro.props;
               )}
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
 
     {dyk && (
@@ -73,25 +74,26 @@ const { embedded = false } = Astro.props;
       <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-6 text-center" style="color: var(--text-primary);">{t.title}</h2>
       <div class="w-12 h-0.5 mb-12 mx-auto" style="background: var(--accent);"></div>
 
-      <div class="space-y-12">
-        {sections.map((section, index) => (
-          <div class={`flex flex-col md:flex-row gap-6 items-start ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-            <div class="flex-1 w-full bg-white/5 p-8 rounded-2xl border border-white/10 shadow-sm">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg" style="background: var(--accent); color: white;">
-                  {index + 1}
-                </div>
-                <h3 class="font-display text-2xl font-semibold" style="color: var(--text-primary);">{section.title}</h3>
-              </div>
-              <div class="ml-14">
-                <p class="text-lg leading-relaxed" style="color: var(--text-secondary);">{section.content}</p>
+      <div class="relative pl-6 md:pl-10 border-l-2" style="border-color: color-mix(in srgb, var(--accent) 30%, transparent);">
+        <div class="space-y-12">
+          {sections.map((section, index) => (
+            <div class="relative">
+              {/* Timeline Dot */}
+              <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full border-4 shadow-sm" style="background: var(--bg-primary); border-color: var(--accent);"></div>
+              
+              <div class="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10 shadow-sm transition-colors hover:bg-white/10">
+                <h3 class="font-display text-xl md:text-2xl font-semibold mb-4" style="color: var(--text-primary);">
+                  <span style="color: var(--accent);">{section.title.split('·')[0]}</span>
+                  {section.title.includes('·') && <span class="opacity-80">· {section.title.split('·')[1]}</span>}
+                </h3>
+                <p class="text-base md:text-lg leading-relaxed" style="color: var(--text-secondary);">{section.content}</p>
 
                 {section.cards && section.cards.length > 0 && (
                   <div class="mt-6 space-y-6">
-                    <div class="grid gap-4 md:grid-cols-3">
+                    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                       {section.cards.map((card) => (
-                        <article class="rounded-2xl p-5 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
-                          <h4 class="font-semibold text-lg mb-3" style="color: var(--text-primary);">{card.title}</h4>
+                        <article class="rounded-xl p-5 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+                          <h4 class="font-semibold text-base mb-2" style="color: var(--text-primary);">{card.title}</h4>
                           <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{card.text}</p>
                         </article>
                       ))}
@@ -100,14 +102,14 @@ const { embedded = false } = Astro.props;
                     {(section.fieldNote || section.academicNote) && (
                       <div class="grid gap-4 md:grid-cols-2">
                         {section.fieldNote && (
-                          <div class="rounded-2xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
-                            <h4 class="font-semibold text-base mb-2" style="color: var(--text-primary);">{section.fieldNote.title}</h4>
+                          <div class="rounded-xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+                            <h4 class="font-semibold text-sm uppercase tracking-wider mb-2" style="color: var(--accent);">{section.fieldNote.title}</h4>
                             <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{section.fieldNote.text}</p>
                           </div>
                         )}
                         {section.academicNote && (
-                          <div class="rounded-2xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
-                            <h4 class="font-semibold text-base mb-2" style="color: var(--text-primary);">{section.academicNote.title}</h4>
+                          <div class="rounded-xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+                            <h4 class="font-semibold text-sm uppercase tracking-wider mb-2" style="color: var(--accent);">{section.academicNote.title}</h4>
                             <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{section.academicNote.text}</p>
                           </div>
                         )}
@@ -117,8 +119,8 @@ const { embedded = false } = Astro.props;
                 )}
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {dyk && (
