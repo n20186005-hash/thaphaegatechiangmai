@@ -1,0 +1,17 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const target = getRelativeLocaleUrl('th');
+---
+
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href="https://thaphaegatechiangmai.com/th" />
+    <title>Tha Phae Gate (ประตูท่าแพ) · Chiang Mai</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={target}>Thai</a>…</p>
+  </body>
+</html>

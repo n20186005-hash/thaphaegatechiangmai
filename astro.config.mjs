@@ -6,8 +6,8 @@ export default defineConfig({
   site: 'https://thaphaegate.com',
   output: 'static',
   i18n: {
-    defaultLocale: 'zh',
-    locales: ['zh', 'en', 'th'],
+    defaultLocale: 'th',
+    locales: ['th', 'en', 'zh'],
     routing: {
       prefixDefaultLocale: true,
     },
