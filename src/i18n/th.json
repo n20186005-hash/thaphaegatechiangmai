@@ -823,23 +823,6 @@
         "url": "https://www.tmd.go.th"
       }
     ],
-    "friendLinks": {
-      "title": "ลิงก์ที่เกี่ยวข้อง",
-      "links": [
-        {
-          "label": "คู่มือการท่องเที่ยวเชียงใหม่",
-          "href": "https://www.tourismthailand.org/Destinations/Provinces/Chiang-Mai/101"
-        },
-        {
-          "label": "ถนนคนเดินท่าแพ",
-          "href": "https://www.tourismthailand.org/Attraction/tha-phae-walking-street"
-        },
-        {
-          "label": "ท่าอากาศยานเชียงใหม่",
-          "href": "https://chiangmai.airportthai.co.th/th/"
-        }
-      ]
-    },
     "note": "นี่คือคู่มือชุมชน ไม่ใช่เว็บทางการ ต้อนรับการแก้ไขและอัปเดต",
     "backToTop": "กลับด้านบน",
     "mission": {

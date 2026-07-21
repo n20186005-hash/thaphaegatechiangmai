@@ -34,20 +34,6 @@ const links = f.officialLinksList;
           </li>
         </ul>
 
-        {f.friendLinks && f.friendLinks.links && f.friendLinks.links.length > 0 && (
-          <div class="mt-8">
-            <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.friendLinks.title}</h4>
-            <ul class="space-y-2 text-sm">
-              {f.friendLinks.links.map((link) => (
-                <li>
-                  <a href={link.href} target="_blank" rel="noopener noreferrer" class="hover:opacity-70 break-words" style="color: var(--text-secondary);">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
 
       <div>

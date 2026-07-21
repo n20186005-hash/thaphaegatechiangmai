@@ -823,23 +823,6 @@
         "url": "https://www.tmd.go.th"
       }
     ],
-    "friendLinks": {
-      "title": "友情链接",
-      "links": [
-        {
-          "label": "清迈旅游局官方指南",
-          "href": "https://www.tourismthailand.org/Destinations/Provinces/Chiang-Mai/101"
-        },
-        {
-          "label": "清迈周日夜市 (Tha Phae Walking Street)",
-          "href": "https://www.tourismthailand.org/Attraction/tha-phae-walking-street"
-        },
-        {
-          "label": "清迈国际机场",
-          "href": "https://chiangmai.airportthai.co.th/"
-        }
-      ]
-    },
     "note": "本站为公益科普向导，非官方站点；如有信息更新或纠错，欢迎来信。",
     "backToTop": "回到顶部",
     "mission": {

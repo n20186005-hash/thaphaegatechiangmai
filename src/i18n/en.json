@@ -823,23 +823,6 @@
         "url": "https://www.tmd.go.th"
       }
     ],
-    "friendLinks": {
-      "title": "Friend Links",
-      "links": [
-        {
-          "label": "Chiang Mai Tourism Guide",
-          "href": "https://www.tourismthailand.org/Destinations/Provinces/Chiang-Mai/101"
-        },
-        {
-          "label": "Tha Phae Walking Street",
-          "href": "https://www.tourismthailand.org/Attraction/tha-phae-walking-street"
-        },
-        {
-          "label": "Chiang Mai International Airport",
-          "href": "https://chiangmai.airportthai.co.th/en/"
-        }
-      ]
-    },
     "note": "This is a community guide, not an official site. Corrections and updates are welcome.",
     "backToTop": "Back to top",
     "mission": {
