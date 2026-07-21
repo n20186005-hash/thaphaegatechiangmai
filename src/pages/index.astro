@@ -1,5 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { siteConfig } from '../config';
 const target = getRelativeLocaleUrl('th');
 ---
 
@@ -8,7 +9,7 @@ const target = getRelativeLocaleUrl('th');
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="refresh" content={`0; url=${target}`} />
-    <link rel="canonical" href="https://thaphaegatechiangmai.com/th" />
+    <link rel="canonical" href={`${siteConfig.baseUrl}/th`} />
     <title>Tha Phae Gate (ประตูท่าแพ) · Chiang Mai</title>
   </head>
   <body>
