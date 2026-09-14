@@ -29,6 +29,10 @@ const bg = '/gallery/tha-phae-gate-2.jpg';
           <button type="button" class="w-2.5 h-2.5 rounded-full transition" data-quote-dot={i} aria-label={`Quote ${i + 1}`} style={`background: ${i === 0 ? '#fff' : 'rgba(255,255,255,0.4)'};`}></button>
         ))}
       </div>
+
+      {reviews.featuredNote && (
+        <p class="mt-6 text-xs leading-relaxed max-w-3xl mx-auto text-white/60">{reviews.featuredNote}</p>
+      )}
     </div>
   </section>
 )}

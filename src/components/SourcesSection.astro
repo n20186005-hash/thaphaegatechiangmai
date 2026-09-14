@@ -1,0 +1,52 @@
+---
+import { getI18n } from '../i18n/ui';
+import { attraction } from '../config';
+const { messages } = getI18n(Astro.url);
+const s = messages.sources;
+const list = s?.list ?? [];
+const allReviewsUrl = attraction.reviewsShareUrl;
+---
+
+<section id="sources" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3 text-center" style="color: var(--text-primary);">{s.title}</h2>
+    <p class="text-center text-base mb-10" style="color: var(--text-secondary);">{s.subtitle}</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- 评分与用户评价来源 -->
+      <div class="rounded-2xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+        <h3 class="font-semibold mb-3" style="color: var(--text-primary);">⭐ {s.ratingTitle}</h3>
+        <p class="text-2xl font-bold mb-1" style="color: var(--text-primary);">{s.ratingValue}</p>
+        <p class="text-sm font-medium mb-4" style="color: var(--text-secondary);">{s.ratingCount}</p>
+        <p class="text-sm leading-relaxed mb-4" style="color: var(--text-muted);">{s.ratingNote}</p>
+        <a
+          href={allReviewsUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          class="inline-flex items-center gap-2 text-sm font-semibold hover:opacity-70"
+          style="color: var(--accent);"
+        >
+          🔗 {s.ratingLink} ↗
+        </a>
+      </div>
+
+      <!-- 官方与权威机构 -->
+      <div class="rounded-2xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+        <h3 class="font-semibold mb-3" style="color: var(--text-primary);">🏛️ {s.officialTitle}</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color: var(--text-muted);">{s.officialNote}</p>
+        <ul class="space-y-2 text-sm">
+          {list.map((item) => (
+            <li class="flex gap-2">
+              <span style="color: var(--accent);">▪</span>
+              <a href={item.url} target="_blank" rel="noopener noreferrer" class="hover:opacity-70 break-words" style="color: var(--accent);">
+                {item.name} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-xs leading-relaxed mt-10 text-center" style="color: var(--text-muted);">{s.disclaimer}</p>
+  </div>
+</section>

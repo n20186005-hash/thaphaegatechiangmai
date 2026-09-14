@@ -1,0 +1,77 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const s = messages.seasonTable;
+const columns = s.columns ?? [];
+const rows = s.rows ?? [];
+const festivals = s.festivals ?? [];
+---
+
+<section id="season" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{s.title}</h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{s.subtitle}</p>
+    </div>
+
+    <div class="overflow-x-auto rounded-2xl border" style="border-color: var(--border-color); background: var(--card-bg); box-shadow: var(--card-shadow);">
+      <table class="w-full min-w-[46rem] text-left border-collapse">
+        <thead>
+          <tr style="background: var(--bg-tertiary);">
+            {columns.map((c) => (
+              <th scope="col" class="px-4 py-3 text-xs font-semibold uppercase tracking-wider whitespace-nowrap" style="color: var(--text-muted); border-bottom: 1px solid var(--border-color);">{c}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <th scope="row" class="px-4 py-4 align-top whitespace-nowrap" style="border-bottom: 1px solid var(--border-color);">
+                <span class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                  <span aria-hidden="true">{r.icon}</span>{r.season}
+                </span>
+              </th>
+              <td class="px-4 py-4 align-top text-sm whitespace-nowrap" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color);">{r.months}</td>
+              <td class="px-4 py-4 align-top text-sm font-medium whitespace-nowrap" style="color: var(--text-primary); border-bottom: 1px solid var(--border-color);">{r.temp}</td>
+              <td class="px-4 py-4 align-top text-sm" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color);">{r.weather}</td>
+              <td class="px-4 py-4 align-top text-sm whitespace-nowrap" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color);">{r.crowd}</td>
+              <td class="px-4 py-4 align-top text-sm whitespace-nowrap" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color);">{r.outfit}</td>
+              <td class="px-4 py-4 align-top text-sm" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color);">{r.strategy}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6 mt-8">
+      {s.airTitle && (
+        <div class="rounded-2xl p-6 border" style="background: color-mix(in srgb, var(--accent) 8%, transparent); border-color: color-mix(in srgb, var(--accent) 28%, transparent);">
+          <h3 class="font-semibold text-lg mb-3" style="color: var(--text-primary);">🌫️ {s.airTitle}</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{s.airNote}</p>
+        </div>
+      )}
+
+      {festivals.length > 0 && (
+        <div class="rounded-2xl p-6 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+          <h3 class="font-semibold text-lg mb-4" style="color: var(--text-primary);">🎏 {s.festivalTitle}</h3>
+          <ul class="space-y-3">
+            {festivals.map((f) => (
+              <li class="flex gap-3 text-sm">
+                <span class="shrink-0 text-lg" aria-hidden="true">{f.icon}</span>
+                <span>
+                  <span class="font-semibold" style="color: var(--text-primary);">{f.name}</span>
+                  <span class="ml-2 text-xs" style="color: var(--text-muted);">{f.time}</span>
+                  <span class="block leading-relaxed mt-1" style="color: var(--text-secondary);">{f.note}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+
+    {s.note && (
+      <p class="max-w-4xl mx-auto mt-6 text-xs leading-relaxed text-center" style="color: var(--text-muted);">{s.note}</p>
+    )}
+  </div>
+</section>

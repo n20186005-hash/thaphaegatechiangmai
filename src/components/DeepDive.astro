@@ -117,6 +117,22 @@ const audItems = aud.items ?? [];
               <div class="flex items-center gap-3 mb-3">
                 <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{item.group}</h3>
               </div>
+
+              {(item.pace || item.duration) && (
+                <div class="flex flex-wrap gap-3 mb-4">
+                  {item.pace && (
+                    <span class="text-xs px-3 py-1.5 rounded-full" style="background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border-color);">
+                      🧭 {aud.paceLabel}：<span class="font-semibold" style="color: var(--text-primary);">{item.pace}</span>
+                    </span>
+                  )}
+                  {item.duration && (
+                    <span class="text-xs px-3 py-1.5 rounded-full" style="background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border-color);">
+                      ⏱️ {aud.durationLabel}：<span class="font-semibold" style="color: var(--text-primary);">{item.duration}</span>
+                    </span>
+                  )}
+                </div>
+              )}
+
               <p class="text-sm sm:text-base leading-relaxed mb-4" style="color: var(--text-secondary);"><span class="font-medium mr-2" style="color: var(--text-primary);">{aud.resonanceLabel}</span>{item.resonance}</p>
               {item.routeTitle ? (
                 <div class="space-y-4 bg-black/5 p-4 rounded-xl">
@@ -144,6 +160,8 @@ const audItems = aud.items ?? [];
 
   <script is:inline>
     document.querySelectorAll('.tabs-container').forEach(container => {
+      if (container.dataset.tabsBound === '1') return;
+      container.dataset.tabsBound = '1';
       const tabs = container.querySelectorAll('[role="tab"]');
       const panels = container.querySelectorAll('[role="tabpanel"]');
       

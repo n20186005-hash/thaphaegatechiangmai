@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "thaphaegatechiangmai" generated at 2026-09-14T01:54:35.924Z.

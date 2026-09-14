@@ -5,11 +5,17 @@ const n = messages.stickyNav;
 const h = messages.header;
 const items = [
   { label: n.facts.label, href: '#quick-facts' },
+  { label: n.weather.label, href: '#weather' },
   { label: h.history, href: '#history' },
-  { label: n.transport.label, href: '#transport' },
+  { label: n.legends?.label ?? 'Legends', href: '#legends' },
+  { label: n.science?.label ?? 'Science', href: '#science' },
   { label: n.route.label, href: '#route' },
+  { label: n.season?.label ?? 'Seasons', href: '#season' },
+  { label: n.services?.label ?? 'Services', href: '#services' },
+  { label: n.transport.label, href: '#transport' },
   { label: n.visit.label, href: '#visit' },
   { label: n.faq.label, href: '#faq' },
+  { label: n.sources?.label ?? 'Sources', href: '#sources' },
 ];
 ---
 

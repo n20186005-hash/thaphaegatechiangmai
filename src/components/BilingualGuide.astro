@@ -1,0 +1,39 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const b = messages.bilingual;
+---
+
+<section id="bilingual" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3 text-center" style="color: var(--text-primary);">
+      {b.title}
+    </h2>
+    <p class="text-center text-base sm:text-lg mb-10 max-w-3xl mx-auto" style="color: var(--text-secondary);">
+      {b.subtitle}
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {b.cards.map((c: any) => (
+        <article
+          class="h-full rounded-2xl border p-6 flex flex-col"
+          style="border-color: var(--border-color); background: var(--card-bg);"
+        >
+          <span class="text-3xl mb-3" aria-hidden="true">{c.icon}</span>
+          <h3 class="font-display text-lg font-semibold mb-1" lang="th" style="color: var(--text-primary);">
+            {c.thTitle}
+          </h3>
+          <p class="text-xs uppercase tracking-[0.14em] mb-3" lang="en" style="color: var(--text-muted);">
+            {c.enTitle}
+          </p>
+          <p class="text-sm leading-relaxed" lang="en" style="color: var(--text-secondary);">
+            {c.en}
+          </p>
+        </article>
+      ))}
+    </div>
+
+    <p class="text-xs mt-8 text-center leading-relaxed" style="color: var(--text-muted);">{b.note}</p>
+  </div>
+</section>

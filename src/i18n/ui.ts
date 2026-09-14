@@ -32,14 +32,16 @@ export function getI18n(url: URL) {
 }
 
 export function buildAlternates(path = ''): Record<string, string> {
-  const base = `https://${process.env.CURRENT_SITE_DOMAIN || 'thaphaegatechiangmai.com'}`;
+  // 规范域名：始终使用主域（去掉 www 前缀），且路径统一以 / 结尾
+  const host = (process.env.CURRENT_SITE_DOMAIN || 'thaphaegatechiangmai.com').replace(/^www\./i, '');
+  const base = `https://${host}`;
   const clean = path.replace(/^\/+/, '').replace(/\/+$/, '');
-  const mk = (l: string) => `${base}/${l}${clean ? '/' + clean : ''}`;
+  const mk = (l: string) => `${base}/${l}/${clean ? clean + '/' : ''}`;
   return {
     th: mk('th'),
     en: mk('en'),
     zh: mk('zh'),
-    xDefault: mk('th'),
+    xDefault: mk('en'),
   };
 }
 

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Tha Phae Gate, Chiang Mai">
+  <rect width="512" height="512" fill="#1a3a24"/>
+  <g fill="#e8a87c">
+    <rect x="88" y="404" width="336" height="42" rx="8"/>
+    <rect x="92" y="186" width="328" height="46" rx="10"/>
+    <rect x="120" y="226" width="48" height="220" rx="6"/>
+    <rect x="344" y="226" width="48" height="220" rx="6"/>
+    <path d="M256 256a84 84 0 0 0-84 84h168a84 84 0 0 0-84-84z"/>
+  </g>
+  <g fill="#10251a">
+    <path d="M256 288a52 52 0 0 0-52 52h104a52 52 0 0 0-52-52z"/>
+    <rect x="204" y="340" width="104" height="106"/>
+  </g>
+</svg>

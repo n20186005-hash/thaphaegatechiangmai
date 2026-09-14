@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Tha Phae Gate (ประตูท่าแพ) | East Gate of Chiang Mai Old City · Free · Open 24 Hours",
-    "description": "Tha Phae Gate (ประตูท่าแพ) is the eastern gate of Chiang Mai's Old City, first built when King Mangrai founded the walled city in 1296 and rebuilt in the 1980s. Free and open 24 hours, it is Chiang Mai's living room, a pigeon square and the start of the Sunday Walking Street. Rated 4.4 on Google (29,240 reviews).",
-    "keywords": "Tha Phae Gate, ประตูท่าแพ, Chiang Mai Old City, Chiang Mai landmark, Sunday Walking Street, things to do in Chiang Mai, Chiang Mai travel"
+    "title": "Tha Phae Gate Chiang Mai (ประตูท่าแพ): Visitor Guide, History & Map",
+    "description": "Plan your visit to Tha Phae Gate (ประตูท่าแพ), the 13th-century east gate of Chiang Mai Old City — rated 4.4★ from 29,638 Google reviews. GPS 18.7878, 98.9933 · Plus Code QXQV+48, free and open 24 hours, photo tips, old city walls, Sunday Walking Street and how to get there from Chiang Mai Airport.",
+    "keywords": "Tha Phae Gate, Tha Phae Gate Chiang Mai, ประตูท่าแพ, Chiang Mai Old City, Chiang Mai old city walls, Tha Phae Gate coordinates, Tha Phae Gate history, Sunday Walking Street, how to get to Tha Phae Gate, things to do in Chiang Mai"
   },
   "header": {
     "badge": "Chiang Mai · East Gate",
@@ -22,8 +22,12 @@
         "label": "History"
       },
       {
+        "id": "weather",
+        "label": "Weather"
+      },
+      {
         "id": "route",
-        "label": "Walking Route"
+        "label": "Routes"
       },
       {
         "id": "transport",
@@ -44,7 +48,10 @@
     "gallery": "Gallery",
     "reviews": "Reviews",
     "faq": "FAQ",
-    "map": "Map"
+    "map": "Map",
+    "weather": "Weather",
+    "services": "Services",
+    "season": "Seasons"
   },
   "common": {
     "changeLanguage": "Change language",
@@ -72,12 +79,32 @@
       "label": "Facts",
       "icon": "📌"
     },
+    "weather": {
+      "label": "Weather",
+      "icon": "🌤️"
+    },
+    "season": {
+      "label": "Seasons",
+      "icon": "🍃"
+    },
+    "services": {
+      "label": "Services",
+      "icon": "🧭"
+    },
+    "legends": {
+      "label": "Legends",
+      "icon": "📜"
+    },
+    "science": {
+      "label": "Science",
+      "icon": "🔬"
+    },
     "etiquette": {
       "label": "Etiquette",
       "icon": "🤝"
     },
     "route": {
-      "label": "Walking Route",
+      "label": "Routes",
       "icon": "🚶"
     },
     "transport": {
@@ -95,14 +122,23 @@
     "faq": {
       "label": "FAQ",
       "icon": "❓"
+    },
+    "sources": {
+      "label": "Sources",
+      "icon": "🔗"
     }
   },
   "hero": {
-    "rating": "4.4 (29,240)",
-    "reviewCount": "29,240 reviews",
+    "title": "Tha Phae Gate (Chiang Mai)",
+    "subtitle": "The eastern gate and living room of Chiang Mai Old City, Thailand · A 700-year Lan Na landmark · Free · Open 24 hours",
+    "rating": "4.4 / 5",
+    "reviewCount": "29,638 reviews",
     "hours": "Open 24 hours",
     "openMaps": "View on Google Maps 📍",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
+    "ratingSourceNote": "Rating and review count synced from Google Maps user reviews · Sep 2026",
+    "allReviewsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
+    "allReviewsLabel": "See all reviews on Google Maps",
     "legend": {
       "quote": "If Chiang Mai has a 'gateway living room', it must be Tha Phae Gate — more than a gate, it is the eastern heartbeat of the old city.",
       "attribution": "— Chiang Mai urban culture researcher"
@@ -113,7 +149,7 @@
       "Open 24 hours"
     ],
     "routeCta": {
-      "label": "See the half-day walking route",
+      "label": "See half-day & full-day routes",
       "href": "#route"
     },
     "historyCta": {
@@ -151,7 +187,8 @@
     },
     "liveInfo": {
       "weather": "Live weather",
-      "sunset": "Sunset today"
+      "sunset": "Sunset today",
+      "moreLabel": "7-day forecast ↗"
     },
     "sunsetPlanner": {
       "eyebrow": "Light & timing",
@@ -198,7 +235,7 @@
       {
         "label": "Coordinates",
         "value": "18.7878°N, 98.9933°E",
-        "desc": "Plus Code: QXQV+38 Chiang Mai. Locatable directly on Google Maps."
+        "desc": "Plus Code: QXQV+48 Chiang Mai. Locatable directly on Google Maps."
       },
       {
         "label": "Admission",
@@ -264,13 +301,102 @@
     ]
   },
   "higashiyamaRoute": {
-    "title": "Tha Phae Gate · Half-day walking route",
-    "subtitle": "Starting at the gate, spend half a day exploring the eastern half of Chiang Mai's Old City.",
+    "title": "Recommended routes",
+    "subtitle": "Two options: take the half-day route if you are short on time, or the full-day route to see the Old City properly.",
+    "durationLabel": "Time needed",
+    "distanceLabel": "Walking distance",
+    "bestTimeLabel": "Best timing",
+    "plans": [
+      {
+        "icon": "⏱️",
+        "name": "Half-day classic",
+        "duration": "About 3 hours",
+        "distance": "About 3 km",
+        "bestTime": "6:30–9:30 am or 4:00–7:00 pm",
+        "summary": "Start at the gate and walk the eastern half of the Old City, covering the key temples and streets at a relaxed pace on mostly flat ground.",
+        "tip": "From Sunday afternoon Tha Phae Road becomes a pedestrian street and gets much busier — do the main stretch in the morning if you can."
+      },
+      {
+        "icon": "🗺️",
+        "name": "Full-day in depth",
+        "duration": "About 6–7 hours including breaks",
+        "distance": "About 5.5 km",
+        "bestTime": "Start at 7:00 am, return to the gate around sunset for the lights",
+        "summary": "Extends the half-day route west into the very heart of the Old City, adding museums, a market and a cluster of temples — ideal if you like to take your time.",
+        "steps": [
+          {
+            "title": "Tha Phae Gate square",
+            "meta": "Start · 0 min",
+            "text": "First orient yourself at the gate facade and the information boards: outside lies Tha Phae Road toward the Ping River, inside the main east–west axis of the Old City.",
+            "tips": [
+              "Morning light is softest — photograph the gate front before heading in."
+            ]
+          },
+          {
+            "title": "North along the east wall and moat",
+            "meta": "Walk ~15 min",
+            "text": "Head north beside the wall and moat and look at how gate, corner bastions and water formed a single defensive system. The moat also supports aquatic plants and city birds.",
+            "tips": [
+              "There is a walkway along the moat; the roadside trees give the best shade in the hot season."
+            ]
+          },
+          {
+            "title": "Three Kings Monument · City Arts & Cultural Centre",
+            "meta": "Walk ~15 min",
+            "text": "The bronze monument to the three founding kings (Mangrai, Ramkhamhaeng and Ngam Muang) stands at the geographic centre of the Old City; the neighbouring arts centre gives a quick overview of Lanna history.",
+            "tips": [
+              "The square in front is the easiest meeting point inside the Old City."
+            ]
+          },
+          {
+            "title": "Wat Phra Singh",
+            "meta": "Walk ~10 min",
+            "text": "One of the most important Lanna temples in Chiang Mai, known for the Phra Singh Buddha and an exquisite Lanna-style scripture library; the murals and architectural detail reward a slow look.",
+            "tips": [
+              "Remove shoes before entering halls, cover shoulders and knees, and never pose with your back to a Buddha image."
+            ]
+          },
+          {
+            "title": "Wat Chedi Luang · Wat Phan Tao",
+            "meta": "Walk ~10 min",
+            "text": "The enormous ruined stupa of Wat Chedi Luang is one of Chiang Mai's most striking monuments; next door, Wat Phan Tao is famed for its all-teak hall. Visit both together.",
+            "tips": [
+              "Temples usually stop admitting visitors around 5:00 pm, so schedule this for the earlier afternoon."
+            ]
+          },
+          {
+            "title": "Somphet Market · lunch and rest",
+            "meta": "Stay ~60 min",
+            "text": "A traditional market on the north-east side of the Old City, strong on fresh produce, spices and cooked food — a good place for a northern Thai lunch and to restock water and fruit.",
+            "tips": [
+              "1:00–3:00 pm is the hottest window of the year; a perfect time to sit down and cool off."
+            ]
+          },
+          {
+            "title": "Wat Lok Moli · northern stretch of the wall",
+            "meta": "Walk ~25 min",
+            "text": "Walk the northern stretch of the wall and moat and detour to Wat Lok Moli, known for its wooden structures and teak carving. This section is noticeably quieter than the temple core.",
+            "tips": [
+              "A good stretch to slow down and look at how the wall meets the moat."
+            ]
+          },
+          {
+            "title": "Back to Tha Phae Gate · lights and night market",
+            "meta": "Walk ~25 min",
+            "text": "Return around sunset, when the square lights come on — the golden window for photography. On Sundays Tha Phae Road is already a pedestrian street, so you can finish with the night market.",
+            "tips": [
+              "The Sunday market starts after 4:00 pm; plan your trip home via the inner Old City roads."
+            ]
+          }
+        ],
+        "tip": "The full-day route covers a lot of ground: wear soft-soled shoes and carry water. If energy is limited, take a red songthaew for the 'Wat Lok Moli · northern wall' section."
+      }
+    ],
     "steps": [
       {
         "title": "Tha Phae Gate square",
         "meta": "Start · 0 min",
-        "text": "Begin at the gate and pigeon square; morning light is softest. Read the info boards to understand the old city layout."
+        "text": "Begin at the gate and pigeon square; morning light is softest. Read the info boards to understand the old city layout, then head inside the walls."
       },
       {
         "title": "North along the east wall",
@@ -280,12 +406,12 @@
       {
         "title": "Three Kings Monument",
         "meta": "Walk ~20 min",
-        "text": "A bronze monument to the three kings who founded Chiang Mai — the geographic heart of the old town."
+        "text": "A bronze monument to the three founding kings (Mangrai, Ramkhamhaeng, Ngam Muang) — the geographic heart of the old town and the best meeting point."
       },
       {
         "title": "Wat Chedi Luang & Wat Phra Singh",
         "meta": "Walk ~15 min",
-        "text": "Two of Chiang Mai's most important Lanna temples; visit the great stupa and scripture library nearby."
+        "text": "Two of Chiang Mai's most important Lanna temples; see the giant ruined stupa, the scripture library and Lanna murals."
       },
       {
         "title": "Back to Tha Phae Rd · Sunday Market",
@@ -293,11 +419,19 @@
         "text": "Return to the gate area in the evening; on Sundays, stroll the famous Sunday Walking Street for food and crafts."
       }
     ],
-    "disclaimer": "About 3 km total, mostly flat. The Sunday Walking Street closes Tha Phae Road from ~16:00 on Sundays — go early to avoid crowds."
+    "disclaimer": "These routes are walking references; actual time depends on how long you linger and on the weather. The Sunday Walking Street closes Tha Phae Road from ~16:00 on Sundays — go early to avoid crowds."
   },
   "intro": {
     "title": "What is Tha Phae Gate?",
     "description": "Tha Phae Gate (ประตูท่าแพ) sits on the eastern wall of Chiang Mai's Old City and is its most representative gate — today also the city's living room. 'Tha Phae' means 'raft pier' in Thai: the gate historically faced the Ping River, where teak rafts landed to trade. Today the gate is free and open all day; its square is a hub for feeding pigeons, photos, gatherings and festivals, and the starting point of the Sunday Walking Street.",
+    "entity": {
+      "heading": "About Tha Phae Gate",
+      "welcome": "Welcome to Tha Phae Gate (ประตูท่าแพ), widely recognized as the central Tha Phae Gate. Located in the heart of Chiang Mai, Chiang Mai Old City, Thailand, this destination serves as a primary hub for travelers visiting the region.",
+      "geoChainLabel": "Location hierarchy",
+      "geoChain": "Tha Phae Gate → Chiang Mai Old City → Chiang Mai → Thailand",
+      "nearbyLabel": "Nearby landmarks",
+      "nearby": "When visiting Tha Phae Gate, visitors can easily explore surrounding historical landmarks and points of interest, including the Three Kings Monument and Wat Chedi Luang."
+    },
     "officialManagement": {
       "title": "Management & on-site services",
       "text": "The square is managed by the Chiang Mai City Municipality (เทศบาลนครเชียงใหม่) as public space — daily opening, maintenance and festival setup are coordinated by them; info boards and volunteers offer basic guidance. Nearby temples are managed by the monasteries and the Fine Arts Department."
@@ -689,13 +823,19 @@
   },
   "reviews": {
     "title": "What travelers say",
-    "subtitle": "Real feedback from travelers worldwide (aggregated from public platforms).",
+    "subtitle": "Ratings synced from Google Maps user reviews; the notes below are editorial summaries of feedback commonly seen on public review platforms.",
     "rating": "4.4 / 5",
-    "total": "29,240 reviews",
-    "cta": "📍 View more reviews on Google Maps",
+    "total": "29,638 reviews",
+    "cta": "📍 See all 29,638 reviews on Google Maps",
     "mapLabel": "View location on Google Maps",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
-    "source": "Data aggregated from public review platforms such as Google Maps",
+    "source": "Rating and review count synced from Google Maps user reviews (third-party aggregate)",
+    "sourceNote": "The rating (4.4 / 5) and review count (29,638) on this page are synced from Google Maps user reviews, as of September 2026. The rating and the review content are the property of the original authors and Google Maps; this site cites and displays them for reference only.",
+    "sourceLinkLabel": "Source: Google Maps user reviews",
+    "allReviewsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
+    "updatedLabel": "Rating & review count synced: September 2026",
+    "itemsNote": "The thematic scores and summaries below were compiled by this site's editors from feedback commonly seen on public review platforms (editorial summary, not verbatim quotes of individual reviews). For the original reviews and their authors, see Google Maps.",
+    "featuredNote": "The quotes above are editorial summaries of feedback commonly seen on public review platforms — not verbatim quotes of individual reviews. See Google Maps for the original reviews and their authors.",
     "featuredTitle": "Voices from travelers",
     "featured": [
       {
@@ -731,10 +871,15 @@
   },
   "mapSection": {
     "title": "Map & location",
-    "subtitle": "Tha Phae Gate (ประตูท่าแพ): Tha Phae Road, Chang Khlan Sub-district, Mueang Chiang Mai District, Chiang Mai 50200, Thailand. Plus Code: QXQV+38 Chiang Mai.",
+    "subtitle": "Tha Phae Gate (ประตูท่าแพ): Tha Phae Road, Chang Khlan Sub-district, Mueang Chiang Mai District, Chiang Mai 50200, Thailand. Plus Code: QXQV+48 Chiang Mai.",
     "note": "Tap the map to view the location, plan a route and check live info on Google Maps.",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
-    "openMaps": "View on Google Maps 📍"
+    "openMaps": "View on Google Maps 📍",
+    "coordinatesTitle": "Exact location",
+    "coordsLabel": "GPS coordinates",
+    "plusCodeLabel": "Plus Code",
+    "directionsCta": "Get directions",
+    "walkNote": "The gate stands on the east side of the Old City where Tha Phae Road meets the moat road — about a 15-minute walk from the Three Kings Monument, and the Sunday Walking Street starts right at the gate."
   },
   "footer": {
     "badge": "Tha Phae Gate · Community Guide",
@@ -838,7 +983,45 @@
     "cookies": "Cookie settings",
     "disclaimer": "This is a community guide, not an official site. Corrections and updates are welcome.",
     "dataSourceLabel": "Data source",
-    "dataSource": "Aggregated from public platforms such as Google Maps"
+    "dataSource": "Aggregated from public platforms such as Google Maps",
+    "imageRights": "Image rights: All images shown on this website are the property of, and copyright belongs to, their original photographers.",
+    "licenseNote": "The text and editorial arrangement on this site are original or compiled under authorization; please do not republish without permission. Ratings and reviews are quoted from Google Maps user reviews, and copyright belongs to the original authors and Google Maps."
+  },
+  "sources": {
+    "title": "Sources & authoritative references",
+    "subtitle": "Information on this page is verified against the public and official sources below; ratings and reviews are synced from Google Maps.",
+    "ratingTitle": "Rating & user reviews",
+    "ratingValue": "4.4 / 5",
+    "ratingCount": "29,638 reviews · synced Sep 2026",
+    "ratingNote": "The rating and review count (4.4 / 5, 29,638) are synced from Google Maps user reviews; copyright belongs to the original authors and Google Maps. This site cites and displays them for reference only.",
+    "ratingLink": "See all 29,638 Google Maps reviews",
+    "officialTitle": "Official & authoritative bodies",
+    "officialNote": "Official / authoritative destination sources for verification and further reading:",
+    "portalText": "For official updates and regional tourism information, visit",
+    "portalLink": "Thailand / Chiang Mai Official Tourism Portal",
+    "disclaimer": "This site is an independent non-profit information project and is not affiliated with Google, the Tourism Authority of Thailand, or any government body.",
+    "list": [
+      {
+        "name": "Google Maps · Tha Phae Gate place page (rating & review source)",
+        "url": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9"
+      },
+      {
+        "name": "Tourism Authority of Thailand (TAT)",
+        "url": "https://www.tourismthailand.org"
+      },
+      {
+        "name": "Chiang Mai Municipality",
+        "url": "https://www.chiangmai.go.th"
+      },
+      {
+        "name": "Tourism Thailand (中文)",
+        "url": "https://www.thai.travel"
+      },
+      {
+        "name": "Thai Meteorological Department",
+        "url": "https://www.tmd.go.th"
+      }
+    ]
   },
   "privacy": {
     "title": "Privacy policy",
@@ -999,6 +1182,56 @@
             "a": "The flat square and pigeon feeding are family-friendly; just watch sun protection and hydration."
           }
         ]
+      },
+      {
+        "title": "Location, history & getting here",
+        "items": [
+          {
+            "q": "What are the GPS coordinates and Plus Code of Tha Phae Gate?",
+            "a": "18.7878, 98.9933 — Plus Code QXQV+48 Chiang Mai. Paste either into Google Maps or a ride-hailing app and it drops you at the gate; the square itself has no street number."
+          },
+          {
+            "q": "Can I walk the old city walls and moat from the gate?",
+            "a": "Yes. The gate is the eastern entrance of the square moat and rampart circuit that still defines Chiang Mai Old City, with a walking lane beside the water and about 6.5 km around the full loop. The brickwork you see was rebuilt in the 1980s on the original footprint, so it is a reconstruction rather than 13th-century fabric."
+          },
+          {
+            "q": "Is this an officially managed heritage site?",
+            "a": "The gate and the surrounding square are public space maintained by Chiang Mai Municipality: no ticket booth, no gatekeeper, open day and night. For national-level tourism information see the Tourism Authority of Thailand link in our sources."
+          },
+          {
+            "q": "How do I get here from Chiang Mai Airport, and what does it cost?",
+            "a": "Chiang Mai International Airport (CNX) is about 7 km away. A metered taxi from the airport counter is roughly 150–200 THB and takes 15–20 minutes, Grab usually quotes 120–250 THB depending on demand, and a red songthaew inside the Old City costs about 30–50 THB per person."
+          },
+          {
+            "q": "How should I photograph the pigeons?",
+            "a": "Shoot from outside the flock at a low angle instead of chasing or cornering the birds, and never handle them. Skip the feed if you only want a photo: concentrated feeding crowds the square, accelerates wear on the brickwork and creates hygiene problems. Early morning has the softest light and the fewest people."
+          }
+        ]
+      }
+    ]
+  },
+  "bilingual": {
+    "title": "Tha Phae Gate in English",
+    "subtitle": "A bilingual Thai–English reference for guides, students and anyone searching for ประตูท่าแพ ภาษาอังกฤษ — Thai heading, English body text you can quote.",
+    "note": "These English paragraphs are written for non-commercial guiding and classroom use; please credit this site.",
+    "cards": [
+      {
+        "icon": "🪵",
+        "thTitle": "ประวัติและที่มาของชื่อ \"ท่าแพ\"",
+        "enTitle": "History & the meaning of \"Tha Phae\"",
+        "en": "\"Tha Phae\" combines thâa (landing, pier) and phae (raft): the name describes a raft landing on the riverbank, not the shape of the gate. King Mangrai founded the walled city in 1296, when the Ping River ran much closer to the east wall, so this gate faced the trading waterfront. The brick gate standing today was rebuilt in the 1980s on the original footprint, which is why the masonry looks far newer than the 13th-century foundation."
+      },
+      {
+        "icon": "🧱",
+        "thTitle": "กำแพงเมืองและคูเมือง",
+        "enTitle": "The old city walls & moat",
+        "en": "Tha Phae Gate is the eastern entrance of the square moat and rampart circuit that still defines Chiang Mai Old City — roughly 1.6 km per side, with a walking lane beside the water. The moat began as a defensive system and now drains storm water, cools the inner city, and shelters birds and aquatic plants, while the wall's brick and mortar suffers from salt efflorescence in the rainy season."
+      },
+      {
+        "icon": "🕊️",
+        "thTitle": "การเยี่ยมชมและมารยาท",
+        "enTitle": "Visiting & etiquette",
+        "en": "The square is free and open around the clock: no ticket booth, no closing time. Cover your shoulders and knees and remove your shoes before entering nearby temples, keep your voice low, do not climb or sit on the brickwork, and do not feed the pigeons — feeding concentrates the flock, accelerates corrosion of the monument and creates hygiene risks. On Sundays from about 16:00, Tha Phae Road closes westwards for the Walking Street market."
       }
     ]
   },
@@ -1228,53 +1461,87 @@
     ]
   },
   "audience": {
-    "title": "Who is it for?",
-    "subtitle": "Whatever kind of traveler you are, Tha Phae Gate has something for you.",
+    "title": "Plans for different travelers",
+    "subtitle": "The same gate, seen differently. Pick a route by who you are travelling with and how much energy you have.",
     "resonanceLabel": "Great for: ",
     "routeLabel": "Suggested route: ",
     "tipLabel": "Tip: ",
+    "paceLabel": "Pace: ",
+    "durationLabel": "Time needed: ",
     "items": [
       {
-        "icon": "📸",
-        "group": "Photographers",
-        "resonance": "Morning and blue-hour walls, pigeons and night views are all very photogenic.",
-        "routeTitle": "Half-day light route",
+        "icon": "👨‍👩‍👧",
+        "group": "Families with children",
+        "pace": "Slow · plenty of breaks",
+        "duration": "About 1.5–2 hours",
+        "resonance": "A flat, open square with snacks and room to move — no steps or slopes to worry about, and plenty for children to watch.",
+        "routeTitle": "Easy family route",
         "stops": [
-          "Morning side-light",
-          "Moat reflection",
-          "Blue-hour night view"
+          "Gate square (watch the pigeons and city wall)",
+          "Shady walkway along the moat",
+          "Nearby convenience store for water and ice cream",
+          "Snack section of the Sunday market"
         ],
-        "tip": "Bring a wide-angle and tripod; claim a spot early on Sunday market nights."
+        "tip": "Strollers roll easily on the square. There is no shade in the open middle, so bring hats and water at midday and keep an eye on passing vehicles and bicycles."
+      },
+      {
+        "icon": "📸",
+        "group": "Photography & nature watching",
+        "pace": "Slow · waiting for light",
+        "duration": "About 2–3 hours including blue hour",
+        "resonance": "The gate faces east, so mornings give side-light; the moat banks offer reliable waterbirds and vegetation, and the light is richest around sunset.",
+        "routeTitle": "Light & ecology route",
+        "stops": [
+          "Eastern side-light on the gate at dawn",
+          "Brick texture and the pigeon flock",
+          "Moat reflections and aquatic plants",
+          "Blue-hour night shots after sunset"
+        ],
+        "tip": "Bring wide-angle and mid-range lenses; on Sunday market nights it is crowded, so arrive early to hold a spot. Never climb the wall or feed birds for a shot."
+      },
+      {
+        "icon": "♿",
+        "group": "Limited mobility & accessibility needs",
+        "pace": "Very slow · turn back any time",
+        "duration": "About 1 hour including rests",
+        "resonance": "The square is level with no steps, so wheelchairs and walkers can manage it; you can move short distances in the shade and stop whenever you like.",
+        "routeTitle": "Accessible-friendly route",
+        "stops": [
+          "Stay near the square entrance for views and photos",
+          "Shaded rest points at shops and cafés",
+          "The gentler stretch of the moat-side walkway",
+          "Return to the nearest drop-off point"
+        ],
+        "tip": "Some sidewalks and crossings have kerbs or no ramps — cross where there are traffic lights and allow extra time. Going with a companion is recommended."
       },
       {
         "icon": "🏛️",
         "group": "Culture & history lovers",
-        "resonance": "The gate, walls and plaques string together a condensed history of the Lanna founding.",
+        "pace": "Medium · mostly reading",
+        "duration": "About 3 hours",
+        "resonance": "The gate, the walls and the on-site information boards together tell a condensed history of the Lanna founding — the best place to start understanding Chiang Mai's layout.",
         "routeTitle": "Old-city history route",
         "stops": [
-          "Gate plaques",
-          "Three Kings Monument",
+          "Gate plaques and the gate's form",
+          "The defensive system along the east wall and moat",
+          "Three Kings Monument and the City Arts & Cultural Centre",
           "Wat Chedi Luang / Wat Phra Singh"
         ],
-        "tip": "Read alongside the bilingual Thai–English plaques on site for deeper understanding."
-      },
-      {
-        "icon": "👨‍👩‍👧",
-        "group": "Families",
-        "resonance": "A flat square, pigeon interaction and snacks keep kids happy too.",
-        "tip": "Watch sun protection and hydration; supervise kids when feeding pigeons."
+        "tip": "Read alongside the bilingual Thai–English plaques on site for deeper understanding; dress modestly and keep your voice down inside temples."
       },
       {
         "icon": "🧳",
         "group": "First-time Chiang Mai",
-        "resonance": "As the eastern gate and transport hub, it is an ideal first stop for planning your trip.",
+        "pace": "Medium · build your bearings",
+        "duration": "About 2 hours",
+        "resonance": "As the eastern gate and transport hub, this is the ideal first stop — get your bearings here, then expand outward.",
         "routeTitle": "Newcomer route",
         "stops": [
-          "Gate photo stop",
-          "Walk to old-city temples",
-          "Sunday night market"
+          "Gate photo stop and orientation",
+          "Walk on to the main old-city temples",
+          "Finish at the Sunday market or a nearby restaurant"
         ],
-        "tip": "Treat it as the 'old-city portal' and expand outward from there."
+        "tip": "Treat it as the 'old-city portal': once you know roughly where the moat and the main gates are, everything else becomes easier."
       }
     ]
   },
@@ -1349,6 +1616,360 @@
         "name": "On-site help & emergency",
         "desc": "Tourist police and emergency contacts, etc.",
         "url": "https://www.tourismthailand.org"
+      }
+    ]
+  },
+  "weather": {
+    "title": "Live weather & 7-day forecast",
+    "subtitle": "One look before you leave tells you whether to pack an umbrella and when to head out.",
+    "nowLabel": "Right now",
+    "feels": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "precip": "Rain today",
+    "updated": "Updated",
+    "adviceTitle": "Today's advice",
+    "alertTitle": "Weather alert",
+    "outfitTitle": "What to wear",
+    "planTitle": "How to plan",
+    "itemsTitle": "What to pack",
+    "forecastTitle": "Next 7 days",
+    "today": "Today",
+    "rain": "Rain chance",
+    "uv": "UV",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "loading": "Fetching the latest conditions…",
+    "unavailable": "Weather information is temporarily unavailable. Please try again shortly.",
+    "note": "The forecast refreshes automatically; local conditions on site always take precedence.",
+    "weekdays": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ]
+  },
+  "services": {
+    "title": "Visitor services & nearby facilities",
+    "subtitle": "What kinds of public services you can normally find around the square, described by category so you can plan accordingly.",
+    "neutralNote": "This is a non-profit information project. The notes below describe facility types neutrally; we do not recommend or rate any specific business and have no commercial partnerships. Distances and hours are estimated ranges from public information — always check current signage and prices on site.",
+    "whereLabel": "Usually found",
+    "tipLabel": "Tip",
+    "items": [
+      {
+        "icon": "🚻",
+        "name": "Public toilets",
+        "where": "Nearby malls, convenience stores and petrol stations",
+        "detail": "There are no fixed public toilets on the gate square itself; the nearest are usually inside nearby malls, convenience stores or petrol stations. If you use a shop's facilities, buying something small is courteous.",
+        "tip": "Carry tissues and small change — a small cleaning fee applies in some places."
+      },
+      {
+        "icon": "🚰",
+        "name": "Drinking water",
+        "where": "Convenience stores, supermarkets and roadside stalls",
+        "detail": "Bottled water is available everywhere from convenience stores and supermarkets; roadside drink stalls also cluster around the square. In the hot and rainy seasons humidity is high — aim to drink water every hour.",
+        "tip": "Pick up an electrolyte drink at a convenience store to avoid afternoon heat exhaustion."
+      },
+      {
+        "icon": "🅿️",
+        "name": "Parking",
+        "where": "Outer ring road and shopping-centre car parks",
+        "detail": "The gate sits on a main road, so kerbside spaces are limited and often restricted by time. If you drive, park on the outer ring road or in a nearby shopping-centre car park and walk in.",
+        "tip": "On Sunday market nights Tha Phae Road closes and demand peaks — arrive early or use another mode of transport."
+      },
+      {
+        "icon": "⛽",
+        "name": "Fuel & EV charging",
+        "where": "Main roads outside the Old City",
+        "detail": "Petrol stations are mostly on the outer ring and the main roads leaving the city; EV chargers are concentrated in large mall and hotel car parks.",
+        "tip": "Fill up before renting a car or scooter — there is no petrol station inside the Old City."
+      },
+      {
+        "icon": "🍜",
+        "name": "Dining (full meals)",
+        "where": "Tha Phae Road, Old City lanes and market stalls",
+        "detail": "The area covers everything from northern Thai home cooking and noodle shops to halal and vegetarian options; during market hours, street-food stalls dominate.",
+        "tip": "Choose stalls that cook to order and turn tables quickly; if you have a sensitive stomach, avoid raw or long-standing cooked food."
+      },
+      {
+        "icon": "☕",
+        "name": "Coffee & light bites",
+        "where": "Along Tha Phae Road and in Old City lanes",
+        "detail": "Chiang Mai has a strong coffee culture and cafés are dense within walking distance of the square — a good way to escape heat or rain mid-route.",
+        "tip": "Indoor seats fill up fast during afternoon thunderstorms, so go in a little earlier."
+      },
+      {
+        "icon": "🏪",
+        "name": "Convenience stores & supermarkets",
+        "where": "Main intersections and shopping centres",
+        "detail": "Chain convenience stores cluster at the main intersections and keep long hours; larger supermarkets are in the shopping districts just outside the Old City.",
+        "tip": "Useful for rain gear, sunscreen, mosquito repellent and basic medicine."
+      },
+      {
+        "icon": "🛏️",
+        "name": "Accommodation",
+        "where": "Inside the Old City, along Tha Phae Rd and the Ping River",
+        "detail": "Options range from hostels and boutique guesthouses to business and resort hotels; most are within walking distance of the Old City core.",
+        "tip": "Prices and crowds both rise during the Sunday market and festival periods — book ahead."
+      },
+      {
+        "icon": "🏧",
+        "name": "Cash & payments",
+        "where": "Bank branches, malls and convenience stores",
+        "detail": "ATMs are usually sited at bank branches, malls and convenience stores. Larger businesses generally accept cards and QR payments; night-market stalls mostly take cash or local QR codes.",
+        "tip": "Keep a little cash for small purchases and cash-only stalls."
+      },
+      {
+        "icon": "💊",
+        "name": "Medical care & pharmacies",
+        "where": "Along the main roads inside and outside the Old City",
+        "detail": "Pharmacies are spread along the main roads, and several general hospitals with emergency departments sit just outside the Old City.",
+        "tip": "Emergency ambulance 1669; carrying your usual medication and a small first-aid kit is recommended."
+      },
+      {
+        "icon": "📶",
+        "name": "Internet & connectivity",
+        "where": "Cafés, malls and hotels",
+        "detail": "Free Wi-Fi is standard in cafés, malls and hotels; local prepaid data SIMs can be bought at the airport, malls and convenience stores.",
+        "tip": "Mobile data can slow noticeably at peak times — save important maps for offline use."
+      },
+      {
+        "icon": "♿",
+        "name": "Accessibility",
+        "where": "The square surface and main walkways",
+        "detail": "The square is broadly level and step-free, so wheelchairs and strollers can get around; some sidewalks and crossings still have kerbs or lack ramps.",
+        "tip": "Cross where there are traffic lights and allow extra time to get around."
+      },
+      {
+        "icon": "🎒",
+        "name": "Left luggage & lost property",
+        "where": "Nearby shops and hotel front desks",
+        "detail": "There is no official left-luggage point on the square, but some nearby shops and hotels will store bags; for lost items, ask the tourist police.",
+        "tip": "Keep valuables on you and mind your bag while taking photos."
+      },
+      {
+        "icon": "🚔",
+        "name": "Help & safety",
+        "where": "Tourist-police posts at main tourist-area junctions",
+        "detail": "Tourist-police posts in the tourist areas can assist in several languages; in an emergency, call the national emergency numbers directly.",
+        "tip": "Tourist police 1155 · Emergency 191 · Ambulance 1669."
+      }
+    ]
+  },
+  "seasonTable": {
+    "title": "Season-by-season strategy",
+    "subtitle": "Chiang Mai has three seasons with clearly different temperatures, rainfall and crowds. Read the table, then set your pace and kit.",
+    "columns": [
+      "Season",
+      "Months",
+      "Temperature",
+      "Weather character",
+      "Crowds",
+      "What to wear",
+      "How to plan"
+    ],
+    "rows": [
+      {
+        "icon": "🌤️",
+        "season": "Cool season",
+        "months": "Nov – Feb",
+        "temp": "15–28°C",
+        "weather": "Dry with little rain; day-night difference can exceed 10°C",
+        "crowd": "Peak all year",
+        "outfit": "Light jacket + long trousers",
+        "strategy": "Good all day; festivals cluster here — ideal for a full-day Old City walk"
+      },
+      {
+        "icon": "🔥",
+        "season": "Hot season",
+        "months": "Mar – May",
+        "temp": "25–38°C",
+        "weather": "Hot and dry, muggy afternoons, occasional heat thunderstorms",
+        "crowd": "Moderate",
+        "outfit": "Breathable light colours + sun hat",
+        "strategy": "Favour early morning and evening; keep midday indoors or in a café"
+      },
+      {
+        "icon": "🌧️",
+        "season": "Rainy season",
+        "months": "Jun – Oct",
+        "temp": "24–32°C",
+        "weather": "Mostly afternoon showers that pass quickly; the greenest months",
+        "crowd": "Quieter",
+        "outfit": "Quick-dry clothing + folding umbrella",
+        "strategy": "Plan outdoor sections in the morning, carry an umbrella, shoot after the rain"
+      }
+    ],
+    "airTitle": "Air quality & the smoke season",
+    "airNote": "From January to April, traditional agricultural burning and forest fires in northern Thailand can push fine particulate matter (PM2.5) noticeably higher. Sensitive groups — children, older visitors and people with respiratory conditions — should check the daily air-quality index and, if needed, cut outdoor time or wear a protective mask. Rainy-season rainfall helps clear airborne particles, and the air is usually clearest then.",
+    "festivalTitle": "Seasonal city events",
+    "festivals": [
+      {
+        "icon": "🎏",
+        "name": "Loy Krathong / Yi Peng",
+        "time": "November (early cool season)",
+        "note": "A traditional Lanna festival with lantern floating and parades in the Old City and along the river; crowds are dense."
+      },
+      {
+        "icon": "💦",
+        "name": "Songkran (Thai New Year)",
+        "time": "Mid-April (end of hot season)",
+        "note": "The whole city celebrates with water — the gate area is extremely lively. Protect your electronics from water."
+      },
+      {
+        "icon": "🛕",
+        "name": "Sunday Walking Street",
+        "time": "Every Sunday from 4:00 pm",
+        "note": "Tha Phae Road closes as a pedestrian street and the gate becomes the start of the whole route."
+      }
+    ],
+    "note": "The seasonal ranges above are multi-year averages intended for trip planning; before you travel, check the live forecast and on-site announcements."
+  },
+  "scienceDuty": {
+    "title": "Understanding & responsibility",
+    "subtitle": "Once you see why it matters, you know how to treat it.",
+    "knowledgeTitle": "A little building and ecology science",
+    "knowledge": [
+      {
+        "icon": "🧱",
+        "title": "Why old brick turns white",
+        "body": "In Chiang Mai's humid rainy season, soluble salts inside the brick migrate to the surface with moisture and crystallise into a white powder — efflorescence. It does not destroy the wall at once, but repeated cycles flake the brick face away, so limiting water contact and foot traffic helps slow the damage."
+      },
+      {
+        "icon": "🕊️",
+        "title": "Pigeons versus old buildings",
+        "body": "Pigeon droppings are acidic and, over time, corrode stone and mortar joints; dense flocks also create hygiene risks. The square's flock is largely a product of human feeding, so not feeding them is the simplest way to protect both the monument and your own health."
+      },
+      {
+        "icon": "💧",
+        "title": "The moat is not just scenery",
+        "body": "The moat began as part of the city's defences and also handled drainage and slope protection. Today it is a cooling water surface in the urban heat island and a habitat for birds. Its reeds and bank trees form a small urban ecological corridor."
+      },
+      {
+        "icon": "🏯",
+        "title": "How the gate and wall were built",
+        "body": "Lanna gates are brick-and-stone arched structures, once topped by a wooden tower — what you see today is a reconstruction. The wall has a rammed-earth core faced with red brick, and its top is wide enough to walk, showing the three-layer 'city–wall–moat' defence design."
+      },
+      {
+        "icon": "🌳",
+        "title": "Shade is a scarce resource",
+        "body": "The rain trees and banyans inside and outside the wall supply essential shade for the square and shelter for city birds. At midday in the hot season the perceived temperature under a tree can be several degrees lower, so please do not break branches, climb, or occupy tree pits."
+      },
+      {
+        "icon": "🕰️",
+        "title": "A reconstruction is not an original",
+        "body": "The gate you see today was rebuilt in the 1980s from historic photographs and documents, not the 13th-century original. Understanding the difference between a reconstruction and an original is the most basic — and most important — skill when visiting a heritage site."
+      }
+    ],
+    "dutyTitle": "Visitor responsibility checklist",
+    "dutyIntro": "Preserving a monument always costs more than repairing it. These six things are within every visitor's reach.",
+    "duty": [
+      {
+        "icon": "🚫",
+        "title": "Do not feed the pigeons",
+        "body": "Feeding concentrates the flock, speeds up corrosion of the monument and creates crowding and hygiene problems."
+      },
+      {
+        "icon": "🧗",
+        "title": "Do not climb or lean on the wall",
+        "body": "Brick and mortar joints cannot take repeated loading — sitting or climbing for photos directly accelerates damage."
+      },
+      {
+        "icon": "🗑️",
+        "title": "Take your rubbish with you",
+        "body": "The square sees heavy evening footfall; put waste in the separated bins or carry it out."
+      },
+      {
+        "icon": "🔇",
+        "title": "Keep the volume down",
+        "body": "The square borders homes and temples, so please avoid loudspeakers and prolonged shouting."
+      },
+      {
+        "icon": "👕",
+        "title": "Dress appropriately in temples",
+        "body": "Remove shoes and cover shoulders and knees before entering nearby temples; do not take selfies with your back to a Buddha image."
+      },
+      {
+        "icon": "📸",
+        "title": "Respect other people's image",
+        "body": "Ask before photographing passers-by, monks and vendors; commercial shoots require a permit."
+      }
+    ],
+    "sourceNote": "The notes above are general public-interest explanations. Where they differ from on-site plaques or official announcements, the on-site and official information takes precedence."
+  },
+  "legends": {
+    "title": "History, legends & evidence",
+    "subtitle": "The gate's real name, the origin of the raft pier, and the stories Chiang Mai keeps telling.",
+    "evidenceLabel": "Evidence & notes",
+    "stories": [
+      {
+        "icon": "🪵",
+        "title": "'Tha Phae' was actually a pier",
+        "subtitle": "A commercial history hidden in the name",
+        "paragraphs": [
+          "'Tha Phae (ท่าแพ)' is made of two Thai words: Tha, meaning a landing or pier, and Phae, meaning raft. Together they simply mean 'raft pier'. The name tells you that this gate originally faced a busy riverbank, not an open square.",
+          "Historically the Ping River ran closer to the city wall than it does today. Teak and goods drifted downstream, landed outside the city, and entered the market through this gate. The gate was named for its function, not its shape or direction.",
+          "The riverbank now lies several hundred metres away, but the name stayed — a useful clue to the direction in which Chiang Mai grew."
+        ],
+        "evidence": "Toponymic evidence; the historic relationship between the eastern wall and the Ping River can be checked against old city maps and local records."
+      },
+      {
+        "icon": "🚪",
+        "title": "The gate's real name was 'Chiang Rueak' — and an outer gate has vanished",
+        "subtitle": "The second gate that disappeared",
+        "paragraphs": [
+          "In Lanna documents and local memory this gate is often called Pratu Chiang Rueak (ประตูเชียงเรือก), while the name Tha Phae belonged more to the pier market outside it.",
+          "The eastern side of the old city was never a single doorway: beyond the main gate stood an outer gate (ประตูหน้า), forming a double defence and a check point. When the walls lost their defensive role in the modern era, the outer gate was demolished along with most of the wall.",
+          "What you see today is therefore a reconstruction at the site of the inner gate; the outer gate and pier market that made this area thrive survive only in place names and street alignments."
+        ],
+        "evidence": "Differences in gate names between Lanna sources and local records; the existing reconstruction was based on late-19th to early-20th-century photographs."
+      },
+      {
+        "icon": "🐘",
+        "title": "The founding legend: King Mangrai, a white elephant and Doi Suthep",
+        "subtitle": "Why the city was sited here",
+        "paragraphs": [
+          "Tradition holds that in the late 13th century King Mangrai, the Lanna ruler, released a white elephant to determine the site and boundary of his new city — where the elephant settled was taken as auspicious ground. Chiang Mai ended up on the Ping plain, backed by Doi Suthep, giving the 'mountain–city–river' arrangement.",
+          "Another strand of the tradition stresses an alliance of three kings: Mangrai of Lanna, Ramkhamhaeng of Sukhothai and Ngam Muang of Phayao planned the city together — which is why the Three Kings Monument stands at its centre today.",
+          "The legend is not literal history, but it preserves something true: the site was chosen with water supply, flood control and defence in mind, a real feat of early urban planning."
+        ],
+        "evidence": "Northern Thai foundation legends and chronicle-style sources; archaeological and topographic research support the flood-control + water + defence logic."
+      },
+      {
+        "icon": "🌠",
+        "title": "Gates and cardinal directions: Lanna astrology",
+        "subtitle": "Gates were more than entrances",
+        "paragraphs": [
+          "Lanna urban planning was strongly shaped by astrological and directional ideas: the number of gates, their orientation and their guardian spirits carried symbolic meaning, so gates were boundaries of a city's cosmology as much as passageways.",
+          "The square wall and moat together defined 'inside' and 'outside', with gates as the nodes for movement and ritual. Most gates decayed through long use, and today only some positions have been restored.",
+          "For visitors, remembering the structure — square wall + moat + gates — is enough to find your bearings almost anywhere in the Old City."
+        ],
+        "evidence": "Studies of Lanna urban form and directional symbolism; surviving wall and moat alignments still match the traditional layout."
+      },
+      {
+        "icon": "📷",
+        "title": "A gate brought back from old photographs",
+        "subtitle": "The 1980s reconstruction",
+        "paragraphs": [
+          "Photographs from the late 19th century show the gate already badly decayed, and parts of the wall had been removed for roads and civic works. For a long period this spot was simply a junction without a gateway.",
+          "In the 1980s, ahead of Chiang Mai's 700th anniversary, local authorities rebuilt the gate on its original alignment using historic photographs and documents, cleared and planted the surroundings, and created today's square.",
+          "That explains why the brickwork looks far newer than something from the 13th century: it is not an original, but an evidence-based reconstruction."
+        ],
+        "evidence": "Photographic archives from the late 19th century onward; the reconstruction dates to the 1980s and is linked to the city's 700th anniversary."
+      },
+      {
+        "icon": "🕊️",
+        "title": "How the square became a 'pigeon square'",
+        "subtitle": "A page of contemporary urban culture",
+        "paragraphs": [
+          "After the gate was rebuilt the area became an open square, and feeding pigeons and taking photos gradually became a fixture for visitors. The flock grew, and travel guides began calling the place the 'pigeon square'.",
+          "In recent years environmental and heritage voices have urged visitors not to feed the birds, to ease the pressure on both the monument and public health — a familiar cycle of a destination becoming popular first and being managed afterwards.",
+          "Today the square also hosts festivals, parades, markets and everyday leisure, which makes it a good window onto how public space in Chiang Mai is actually used."
+        ],
+        "evidence": "Local media coverage and public statements relating to municipal cleaning and monument maintenance; the square's functions continue to shift with tourism and city management."
       }
     ]
   }

@@ -1,0 +1,56 @@
+{
+  "id": "/th",
+  "name": "Tha Phae Gate (Chiang Mai) - Visitor Guide",
+  "short_name": "Tha Phae Gate",
+  "description": "Complete visitor guide to Tha Phae Gate (ประตูท่าแพ), the iconic eastern gate of Chiang Mai Old City, Thailand: location map, history, nearby landmarks and travel tips.",
+  "lang": "th",
+  "dir": "ltr",
+  "start_url": "/th",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#0f2015",
+  "theme_color": "#1a3a24",
+  "categories": ["travel", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Location & Map",
+      "short_name": "Map",
+      "url": "/th#map",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Sources & Reviews",
+      "short_name": "Sources",
+      "url": "/th#sources",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

@@ -2,8 +2,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { getI18n } from '../i18n/ui';
+import { attraction } from '../config';
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
+const imageRights = messages.footer?.imageRights;
 
 let photoFiles = [];
 try {
@@ -28,12 +30,17 @@ try {
   console.error('Error reading gallery directory:', e);
 }
 
-const photos = photoFiles.length > 0 
-  ? photoFiles.map(src => {
+// 图片 Alt 语义绑定：统一附加景点实体名与城市，强化实体识别
+const entitySuffix = `${attraction.fullName} in ${attraction.city}, ${attraction.country}`;
+
+const photos = photoFiles.length > 0
+  ? photoFiles.map((src, i) => {
       const match = (g.photos || []).find(p => p.src === src);
+      const caption = match?.caption || g.photoAlt || '';
       return {
         src,
-        caption: match?.caption || g.photoAlt || ''
+        caption,
+        alt: caption ? `${caption} - ${entitySuffix}` : `${attraction.fullName} photo ${i + 1} - ${entitySuffix}`
       };
     })
   : g.photos || [];
@@ -46,8 +53,8 @@ const photos = photoFiles.length > 0
 
     <div class="gallery-grid" id="gallery-grid">
       {photos.map((photo, index) => (
-        <button type="button" class="gallery-item" data-index={index} aria-label={photo.caption ?? g.photoAlt}>
-          <img src={photo.src} alt={photo.caption ?? g.photoAlt} loading="lazy" />
+        <button type="button" class="gallery-item" data-index={index} aria-label={photo.alt ?? photo.caption ?? g.photoAlt}>
+          <img src={photo.src} alt={photo.alt ?? photo.caption ?? g.photoAlt} loading="lazy" decoding="async" />
         </button>
       ))}
     </div>
@@ -57,6 +64,10 @@ const photos = photoFiles.length > 0
         📍 {g.viewAll}
       </a>
     </div>
+
+    {imageRights && (
+      <p class="text-center text-xs mt-6 leading-relaxed" style="color: var(--text-muted);">{imageRights}</p>
+    )}
   </div>
 </section>
 

@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "thaphaegatechiangmai",
+  "main": "dist/_worker.js/index.js",
+  "compatibility_date": "2026-09-14",
+  "compatibility_flags": ["nodejs_compat"],
+  // 静态页面与图片由 Assets 直出（见构建产物 dist/_routes.json），仅按需路由进入 Worker
+  "assets": {
+    "directory": "dist",
+    "binding": "ASSETS",
+    // 路径末尾斜杠统一：/en 自动跳转到 /en/，与页面 canonical 保持一致
+    "html_handling": "auto-trailing-slash"
+  },
+  // 注意：www 子域 → 主域的 301 由 Cloudflare 区域级重定向规则处理（Assets 层不支持按主机名重定向）：
+  //   Rules → Redirect Rules → 自定义筛选表达式
+  //   (http.host eq "www.thaphaegatechiangmai.com") 时动态重定向到
+  //   concat("https://thaphaegatechiangmai.com", http.request.uri.path)  状态码 301，保留查询串
+  "observability": {
+    "enabled": true
+  }
+}

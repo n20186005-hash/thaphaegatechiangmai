@@ -2,7 +2,14 @@
 import { getI18n } from '../i18n/ui';
 const { messages } = getI18n(Astro.url);
 const rt = messages.higashiyamaRoute;
-const steps = rt.steps ?? [];
+
+// 支持「半日 / 全日」双动线；若数据缺失则回退为单条路线
+const plans = rt.plans && rt.plans.length > 0
+  ? rt.plans.map((p, i) => ({
+      ...p,
+      steps: p.steps && p.steps.length > 0 ? p.steps : (i === 0 ? rt.steps ?? [] : []),
+    }))
+  : [{ icon: '🧭', name: rt.title, summary: '', steps: rt.steps ?? [], tip: '' }];
 ---
 
 <section id="route" class="section-padding" style="background: var(--bg-primary);">
@@ -12,28 +19,74 @@ const steps = rt.steps ?? [];
       <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{rt.subtitle}</p>
     </div>
 
-    <div class="max-w-4xl mx-auto rounded-3xl p-6 md:p-8 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
-      <ol class="space-y-5">
-        {steps.map((s, i) => (
-          <li class="flex gap-4 items-start">
-            <div class="shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center text-sm font-semibold" style="background: var(--accent); color: #fff;">
-              {String(i + 1).padStart(2, '0')}
-            </div>
-            <div class="min-w-0">
-              <p class="font-semibold text-lg leading-snug" style="color: var(--text-primary);">{s.title}</p>
-              {s.meta && <p class="text-xs uppercase tracking-[0.18em] mt-1" style="color: var(--text-muted);">{s.meta}</p>}
-              {s.text && <p class="text-base leading-relaxed mt-2" style="color: var(--text-secondary);">{s.text}</p>}
-              {s.tips && (
-                <ul class="mt-3 space-y-2 text-sm" style="color: var(--text-secondary);">
-                  {s.tips.map((t) => (
-                    <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{t}</span></li>
-                  ))}
-                </ul>
+    <div class="max-w-4xl mx-auto tabs-container" data-tab-group="routes">
+      <div class="flex overflow-x-auto gap-2 mb-6 border-b" style="border-color: var(--border-color);" role="tablist">
+        {plans.map((plan, i) => (
+          <button role="tab" aria-selected={i === 0 ? "true" : "false"} aria-controls={`route-tab-${i}`} class="px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors border-b-2 outline-none aria-selected:text-[var(--accent)] aria-selected:border-[var(--accent)] !border-transparent aria-selected:!border-[var(--accent)] hover:text-[var(--accent)]" style="color: var(--text-secondary);">
+            {plan.icon} {plan.name}
+          </button>
+        ))}
+      </div>
+
+      <div class="tab-panels">
+        {plans.map((plan, i) => (
+          <div id={`route-tab-${i}`} role="tabpanel" class={i === 0 ? "block animate-fade-in-up" : "hidden animate-fade-in-up"}>
+            <div class="rounded-3xl p-6 md:p-8 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+              {(plan.duration || plan.distance || plan.bestTime) && (
+                <div class="flex flex-wrap gap-3 mb-5">
+                  {plan.duration && (
+                    <span class="text-xs px-3 py-1.5 rounded-full" style="background: var(--card-bg); color: var(--text-secondary); border: 1px solid var(--border-color);">
+                      ⏱️ {rt.durationLabel}：<span class="font-semibold" style="color: var(--text-primary);">{plan.duration}</span>
+                    </span>
+                  )}
+                  {plan.distance && (
+                    <span class="text-xs px-3 py-1.5 rounded-full" style="background: var(--card-bg); color: var(--text-secondary); border: 1px solid var(--border-color);">
+                      🚶 {rt.distanceLabel}：<span class="font-semibold" style="color: var(--text-primary);">{plan.distance}</span>
+                    </span>
+                  )}
+                  {plan.bestTime && (
+                    <span class="text-xs px-3 py-1.5 rounded-full" style="background: var(--card-bg); color: var(--text-secondary); border: 1px solid var(--border-color);">
+                      🕰️ {rt.bestTimeLabel}：<span class="font-semibold" style="color: var(--text-primary);">{plan.bestTime}</span>
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {plan.summary && (
+                <p class="text-base leading-relaxed mb-6" style="color: var(--text-secondary);">{plan.summary}</p>
+              )}
+
+              <ol class="space-y-5">
+                {(plan.steps ?? []).map((s, si) => (
+                  <li class="flex gap-4 items-start">
+                    <div class="shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center text-sm font-semibold" style="background: var(--accent); color: #fff;">
+                      {String(si + 1).padStart(2, '0')}
+                    </div>
+                    <div class="min-w-0">
+                      <p class="font-semibold text-lg leading-snug" style="color: var(--text-primary);">{s.title}</p>
+                      {s.meta && <p class="text-xs uppercase tracking-[0.18em] mt-1" style="color: var(--text-muted);">{s.meta}</p>}
+                      {s.text && <p class="text-base leading-relaxed mt-2" style="color: var(--text-secondary);">{s.text}</p>}
+                      {s.tips && (
+                        <ul class="mt-3 space-y-2 text-sm" style="color: var(--text-secondary);">
+                          {s.tips.map((t) => (
+                            <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{t}</span></li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              {plan.tip && (
+                <p class="mt-6 pt-5 text-sm leading-relaxed border-t" style="color: var(--text-secondary); border-color: var(--border-color);">
+                  💡 {plan.tip}
+                </p>
               )}
             </div>
-          </li>
+          </div>
         ))}
-      </ol>
+      </div>
     </div>
 
     {rt.disclaimer && (
@@ -41,3 +94,20 @@ const steps = rt.steps ?? [];
     )}
   </div>
 </section>
+
+<script is:inline>
+  document.querySelectorAll('.tabs-container').forEach(function (container) {
+    if (container.dataset.tabsBound === '1') return;
+    container.dataset.tabsBound = '1';
+    var tabs = container.querySelectorAll('[role="tab"]');
+    var panels = container.querySelectorAll('[role="tabpanel"]');
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+        tab.setAttribute('aria-selected', 'true');
+        panels.forEach(function (p) { p.classList.add('hidden'); p.classList.remove('block'); });
+        if (panels[index]) { panels[index].classList.remove('hidden'); panels[index].classList.add('block'); }
+      });
+    });
+  });
+</script>

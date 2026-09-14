@@ -3,12 +3,34 @@ import { getI18n } from '../i18n/ui';
 const { messages } = getI18n(Astro.url);
 const intro = messages.intro;
 const om = messages.officialManagement;
+const entity = intro.entity ?? {};
 ---
 
 <section id="about" class="section-padding" style="background: var(--bg-secondary);">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-start">
       <div>
+        {entity.heading && (
+          <div class="mb-10 rounded-2xl p-6 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mb-4" style="color: var(--text-primary);">{entity.heading}</h2>
+            <p class="text-lg leading-relaxed mb-5" style="color: var(--text-secondary);">{entity.welcome}</p>
+
+            {entity.geoChain && (
+              <p class="text-sm mb-3 flex flex-wrap items-center gap-2" style="color: var(--text-secondary);">
+                <span class="font-semibold" style="color: var(--text-primary);">{entity.geoChainLabel}：</span>
+                <span>{entity.geoChain}</span>
+              </p>
+            )}
+
+            {entity.nearby && (
+              <p class="text-base leading-relaxed" style="color: var(--text-secondary);">
+                <span class="font-semibold" style="color: var(--text-primary);">{entity.nearbyLabel}：</span>
+                <span>{entity.nearby}</span>
+              </p>
+            )}
+          </div>
+        )}
+
         <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-5" style="color: var(--text-primary);">{intro.title}</h2>
         <p class="text-lg leading-relaxed mb-8" style="color: var(--text-secondary);">{intro.description}</p>
 

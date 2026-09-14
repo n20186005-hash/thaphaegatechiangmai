@@ -1,8 +1,10 @@
 ---
 import { getI18n } from '../i18n/ui';
+import { attraction } from '../config';
 const { messages } = getI18n(Astro.url);
 const m = messages.mapSection;
-const embedUrl = 'https://www.google.com/maps?q=18.7878,98.9933&output=embed';
+const embedUrl = m.mapsEmbedSrc ?? attraction.mapsEmbedSrc;
+const s = messages.sources ?? {};
 ---
 
 <section id="map" class="section-padding" style="background: var(--bg-secondary);">
@@ -15,11 +17,12 @@ const embedUrl = 'https://www.google.com/maps?q=18.7878,98.9933&output=embed';
         src={embedUrl}
         class="w-full h-[320px] sm:h-[420px]"
         width="100%"
-        height="420"
+        height="450"
         style="border:0;"
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title={m.title}
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        title={`${attraction.fullName} (${attraction.city}) - Google Maps`}
       ></iframe>
     </div>
 
@@ -27,6 +30,39 @@ const embedUrl = 'https://www.google.com/maps?q=18.7878,98.9933&output=embed';
       <a href={m.mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex w-full sm:w-auto justify-center px-8 py-3 rounded-full font-semibold text-white" style="background: var(--accent);">
         📍 {m.openMaps}
       </a>
+      <a
+        href={`https://www.google.com/maps/dir/?api=1&destination=${attraction.latitude},${attraction.longitude}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex w-full sm:w-auto justify-center px-8 py-3 rounded-full font-semibold border"
+        style="border-color: var(--accent); color: var(--accent);"
+      >
+        🧭 {m.directionsCta}
+      </a>
     </div>
+
+    <!-- 精确定位：坐标 / Plus Code / 步行提示，直接命中“坐标、怎么走”类搜索需求 -->
+    <h3 class="font-display text-xl font-semibold mt-10 mb-4 text-center" style="color: var(--text-primary);">{m.coordinatesTitle}</h3>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border px-5 py-4 text-center" style="border-color: var(--map-border); background: var(--card-bg);">
+        <p class="text-xs uppercase tracking-[0.16em] mb-1" style="color: var(--text-muted);">{m.coordsLabel}</p>
+        <p class="font-mono text-lg" style="color: var(--text-primary);">{attraction.latitude}, {attraction.longitude}</p>
+      </div>
+      <div class="rounded-2xl border px-5 py-4 text-center" style="border-color: var(--map-border); background: var(--card-bg);">
+        <p class="text-xs uppercase tracking-[0.16em] mb-1" style="color: var(--text-muted);">{m.plusCodeLabel}</p>
+        <p class="font-mono text-lg" style="color: var(--text-primary);">{attraction.plusCode}</p>
+      </div>
+    </div>
+    <p class="text-sm mt-4 text-center leading-relaxed" style="color: var(--text-secondary);">{m.walkNote}</p>
+
+    <!-- 权威 .org / .go.th 外链 -->
+    {s.portalText && (
+      <p class="text-center text-sm mt-8 leading-relaxed" style="color: var(--text-secondary);">
+        {s.portalText}{' '}
+        <a href={attraction.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="underline font-medium hover:opacity-70" style="color: var(--accent);">
+          {s.portalLink ?? attraction.govtTourismUrl}
+        </a>.
+      </p>
+    )}
   </div>
 </section>

@@ -1,0 +1,293 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getWeatherView, type WeatherLang } from '../lib/weather';
+
+const { lang, messages } = getI18n(Astro.url);
+const w = messages.weather;
+const view = await getWeatherView(lang as WeatherLang);
+
+const clientStrings = {
+  weekdays: w.weekdays,
+  today: w.today,
+  rain: w.rain,
+  uv: w.uv,
+  loading: w.loading,
+  unavailable: w.unavailable,
+};
+
+const hasAlerts = (view?.advice.alerts.length ?? 0) > 0;
+---
+
+<section id="weather" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{w.title}</h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{w.subtitle}</p>
+    </div>
+
+    <div id="weather-widget" data-lang={lang} data-endpoint="/api/weather.json">
+      {view ? (
+        <>
+          <!-- 气象预警：有预警才显示，置顶强调安全与行程调整 -->
+          <div
+            class="rounded-2xl border p-5 mb-6"
+            data-wx-panel="alerts"
+            role="alert"
+            hidden={!hasAlerts}
+            style="background: color-mix(in srgb, #dc2626 9%, var(--bg-primary)); border-color: color-mix(in srgb, #dc2626 45%, transparent);"
+          >
+            <p class="font-semibold mb-3 flex items-center gap-2" style="color: #b91c1c;">⚠️ <span>{w.alertTitle}</span></p>
+            <ul class="space-y-2" data-wx-list="alerts">
+              {view.advice.alerts.map((item) => (
+                <li class="flex gap-2 text-sm sm:text-base leading-relaxed" style="color: var(--text-primary);">
+                  <span aria-hidden="true">{item.icon}</span><span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 mb-8">
+            <!-- 当前实况 -->
+            <div class="rounded-3xl p-7 border flex flex-col" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.2em] mb-2" style="color: var(--text-muted);">{w.nowLabel}</p>
+                  <p class="font-display text-5xl font-semibold leading-none" style="color: var(--text-primary);" data-wx="temp">{view.tempText}</p>
+                  <p class="text-lg mt-3" style="color: var(--text-secondary);" data-wx="desc">{view.desc}</p>
+                </div>
+                <span class="text-5xl leading-none" aria-hidden="true" data-wx="icon">{view.icon}</span>
+              </div>
+
+              <dl class="grid grid-cols-2 gap-3 mt-6 text-sm" style="color: var(--text-secondary);">
+                <div class="rounded-xl px-4 py-3" style="background: var(--bg-tertiary);">
+                  <dt class="text-xs mb-1" style="color: var(--text-muted);">{w.feels}</dt>
+                  <dd class="font-semibold" style="color: var(--text-primary);" data-wx="feels">{view.feelsText}</dd>
+                </div>
+                <div class="rounded-xl px-4 py-3" style="background: var(--bg-tertiary);">
+                  <dt class="text-xs mb-1" style="color: var(--text-muted);">{w.humidity}</dt>
+                  <dd class="font-semibold" style="color: var(--text-primary);" data-wx="humidity">{view.humidity}%</dd>
+                </div>
+                <div class="rounded-xl px-4 py-3" style="background: var(--bg-tertiary);">
+                  <dt class="text-xs mb-1" style="color: var(--text-muted);">{w.wind}</dt>
+                  <dd class="font-semibold" style="color: var(--text-primary);" data-wx="wind">{view.windText}</dd>
+                </div>
+                <div class="rounded-xl px-4 py-3" style="background: var(--bg-tertiary);">
+                  <dt class="text-xs mb-1" style="color: var(--text-muted);">{w.precip}</dt>
+                  <dd class="font-semibold" style="color: var(--text-primary);" data-wx="precip">{view.precipText}</dd>
+                </div>
+              </dl>
+
+              <p class="text-xs mt-3" data-wx="airRow" hidden={!view.air} style="color: var(--text-muted);">
+                🌫️ <span data-wx="air">{view.air?.text ?? ''}</span>
+              </p>
+
+              <p class="text-xs mt-5 pt-4 border-t" style="color: var(--text-muted); border-color: var(--border-color);">
+                {w.updated} <span data-wx="updated">{view.updatedAt}</span>
+              </p>
+            </div>
+
+            <!-- 建议：出行穿搭 / 游玩安排 / 随身物品 -->
+            <div class="rounded-3xl p-7 border" style="background: color-mix(in srgb, var(--accent) 9%, transparent); border-color: color-mix(in srgb, var(--accent) 28%, transparent);">
+              <h3 class="font-semibold text-lg mb-5" style="color: var(--text-primary);">🧭 {w.adviceTitle}</h3>
+
+              <div class="space-y-5">
+                <div data-wx-block="outfit" hidden={view.advice.outfit.length === 0}>
+                  <p class="text-sm font-semibold mb-2" style="color: var(--text-primary);">🧥 {w.outfitTitle}</p>
+                  <ul class="space-y-2" data-wx-list="outfit">
+                    {view.advice.outfit.map((item) => (
+                      <li class="flex gap-3 text-sm leading-relaxed" style="color: var(--text-secondary);">
+                        <span aria-hidden="true">{item.icon}</span><span>{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div data-wx-block="plan" hidden={view.advice.plan.length === 0}>
+                  <p class="text-sm font-semibold mb-2" style="color: var(--text-primary);">🗺️ {w.planTitle}</p>
+                  <ul class="space-y-2" data-wx-list="plan">
+                    {view.advice.plan.map((item) => (
+                      <li class="flex gap-3 text-sm leading-relaxed" style="color: var(--text-secondary);">
+                        <span aria-hidden="true">{item.icon}</span><span>{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div data-wx-block="items" hidden={view.advice.items.length === 0}>
+                  <p class="text-sm font-semibold mb-2" style="color: var(--text-primary);">🎒 {w.itemsTitle}</p>
+                  <ul class="flex flex-wrap gap-2" data-wx-list="items">
+                    {view.advice.items.map((item) => (
+                      <li class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border" style="background: var(--bg-tertiary); border-color: var(--border-color); color: var(--text-secondary);">
+                        <span aria-hidden="true">{item.icon}</span><span>{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-5 border-t grid grid-cols-2 gap-4 text-sm" style="border-color: color-mix(in srgb, var(--accent) 25%, transparent);">
+                <p style="color: var(--text-secondary);">🌅 {w.sunrise} <span class="font-semibold" style="color: var(--text-primary);" data-wx="sunrise">{view.days[0]?.sunrise}</span></p>
+                <p style="color: var(--text-secondary);">🌇 {w.sunset} <span class="font-semibold" style="color: var(--text-primary);" data-wx="sunset">{view.days[0]?.sunset}</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 多日预报 -->
+          <h3 class="font-semibold text-xl mb-4" style="color: var(--text-primary);">{w.forecastTitle}</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3" data-wx="days">
+            {view.days.map((day, i) => (
+              <article class="rounded-2xl p-4 border text-center h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+                <p class="text-xs font-semibold mb-2" style="color: var(--text-muted);" data-wx-day="label">
+                  {i === 0 ? w.today : w.weekdays[day.weekday]}
+                </p>
+                <p class="text-2xl mb-2" aria-hidden="true">{day.icon}</p>
+                <p class="text-xs leading-snug mb-3 min-h-8" style="color: var(--text-secondary);" data-wx-day="desc">{day.desc}</p>
+                <p class="text-sm font-semibold" style="color: var(--text-primary);">
+                  <span data-wx-day="tmax">{day.tMax}°</span>
+                  <span class="font-normal opacity-60" data-wx-day="tmin">{day.tMin}°</span>
+                </p>
+                <p class="text-[11px] mt-2" style="color: var(--text-muted);">💧 <span data-wx-day="rain">{day.precipProb}%</span></p>
+                <p class="text-[11px]" style="color: var(--text-muted);">☀️ <span data-wx-day="uv">{day.uv}</span></p>
+              </article>
+            ))}
+          </div>
+        </>
+      ) : (
+        <div class="rounded-3xl p-10 border text-center" style="background: var(--card-bg); border-color: var(--border-color);">
+          <p class="text-4xl mb-4" aria-hidden="true">🌤️</p>
+          <p class="text-base" style="color: var(--text-secondary);">{w.unavailable}</p>
+          <p class="text-sm mt-2" style="color: var(--text-muted);">{w.loading}</p>
+        </div>
+      )}
+
+      <p class="text-xs mt-6 text-center" style="color: var(--text-muted);">{w.note}</p>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="weather-strings" is:inline set:html={JSON.stringify(clientStrings)}></script>
+
+<script is:inline>
+  (function () {
+    var root = document.getElementById('weather-widget');
+    if (!root) return;
+    var raw = document.getElementById('weather-strings');
+    var S = {};
+    try { S = JSON.parse(raw ? raw.textContent : '{}'); } catch (e) { S = {}; }
+    var endpoint = root.getAttribute('data-endpoint') || '/api/weather.json';
+    var lang = root.getAttribute('data-lang') || 'th';
+    var weekdays = Array.isArray(S.weekdays) ? S.weekdays : [];
+
+    var LINE_CLASS = 'flex gap-3 text-sm leading-relaxed';
+    var ALERT_CLASS = 'flex gap-2 text-sm sm:text-base leading-relaxed';
+    var CHIP_CLASS = 'inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border';
+    var CHIP_STYLE = 'background: var(--bg-tertiary); border-color: var(--border-color); color: var(--text-secondary);';
+    var LINE_STYLE = 'color: var(--text-secondary);';
+
+    function set(name, value) {
+      var el = root.querySelector('[data-wx="' + name + '"]');
+      if (el && value !== undefined && value !== null) el.textContent = value;
+    }
+
+    function toggleAttr(el, show) {
+      if (!el) return;
+      if (show) el.removeAttribute('hidden');
+      else el.setAttribute('hidden', '');
+    }
+
+    function labelFor(index, weekday) {
+      if (index === 0) return S.today || '';
+      return weekdays[weekday] || '';
+    }
+
+    function renderDays(days) {
+      var box = root.querySelector('[data-wx="days"]');
+      if (!box || !Array.isArray(days)) return;
+      box.innerHTML = days.map(function (d, i) {
+        return '' +
+          '<article class="rounded-2xl p-4 border text-center h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">' +
+            '<p class="text-xs font-semibold mb-2" style="color: var(--text-muted);">' + labelFor(i, d.weekday) + '</p>' +
+            '<p class="text-2xl mb-2" aria-hidden="true">' + (d.icon || '') + '</p>' +
+            '<p class="text-xs leading-snug mb-3 min-h-8" style="color: var(--text-secondary);">' + (d.desc || '') + '</p>' +
+            '<p class="text-sm font-semibold" style="color: var(--text-primary);">' + d.tMax + '° <span class="font-normal opacity-60">' + d.tMin + '°</span></p>' +
+            '<p class="text-[11px] mt-2" style="color: var(--text-muted);">💧 ' + d.precipProb + '%</p>' +
+            '<p class="text-[11px]" style="color: var(--text-muted);">☀️ ' + d.uv + '</p>' +
+          '</article>';
+      }).join('');
+    }
+
+    function renderList(name, list, mode) {
+      var box = root.querySelector('[data-wx-list="' + name + '"]');
+      if (!box) return;
+      var items = Array.isArray(list) ? list : [];
+      box.textContent = '';
+      items.forEach(function (item) {
+        if (!item || !item.text) return;
+        var li = document.createElement('li');
+        li.textContent = (item.icon ? item.icon + ' ' : '') + item.text;
+        if (mode === 'alert') {
+          li.className = ALERT_CLASS;
+          li.style.color = 'var(--text-primary)';
+        } else if (mode === 'chip') {
+          li.className = CHIP_CLASS;
+          li.style.cssText = CHIP_STYLE;
+        } else {
+          li.className = LINE_CLASS;
+          li.style.color = 'var(--text-secondary)';
+        }
+        box.appendChild(li);
+      });
+    }
+
+    function renderAdvice(advice) {
+      var a = advice || {};
+      var alerts = Array.isArray(a.alerts) ? a.alerts : [];
+      renderList('alerts', alerts, 'alert');
+      renderList('outfit', a.outfit, 'line');
+      renderList('plan', a.plan, 'line');
+      renderList('items', a.items, 'chip');
+      toggleAttr(root.querySelector('[data-wx-panel="alerts"]'), alerts.length > 0);
+      toggleAttr(root.querySelector('[data-wx-block="outfit"]'), (a.outfit || []).length > 0);
+      toggleAttr(root.querySelector('[data-wx-block="plan"]'), (a.plan || []).length > 0);
+      toggleAttr(root.querySelector('[data-wx-block="items"]'), (a.items || []).length > 0);
+    }
+
+    function update(data) {
+      if (!data || data.ok !== true) return;
+      set('temp', data.tempText);
+      set('desc', data.desc);
+      set('icon', data.icon);
+      set('feels', data.feelsText);
+      set('humidity', data.humidity + '%');
+      set('wind', data.windText);
+      set('precip', data.precipText);
+      set('updated', data.updatedAt);
+      if (data.air && data.air.text) {
+        set('air', data.air.text);
+        toggleAttr(root.querySelector('[data-wx="airRow"]'), true);
+      } else {
+        toggleAttr(root.querySelector('[data-wx="airRow"]'), false);
+      }
+      if (data.days && data.days[0]) {
+        set('sunrise', data.days[0].sunrise);
+        set('sunset', data.days[0].sunset);
+      }
+      renderAdvice(data.advice);
+      renderDays(data.days);
+    }
+
+    function load() {
+      fetch(endpoint + '?lang=' + encodeURIComponent(lang), { headers: { accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+        .then(update)
+        .catch(function () { /* 保留服务端快照 */ });
+    }
+
+    load();
+    // 回到前台或长时间停留时静默刷新
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) load();
+    });
+    setInterval(load, 15 * 60 * 1000);
+  })();
+</script>

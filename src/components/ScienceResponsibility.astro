@@ -1,0 +1,53 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const s = messages.scienceDuty;
+const knowledge = s.knowledge ?? [];
+const duty = s.duty ?? [];
+---
+
+<section id="science" class="section-padding" style="background: var(--bg-secondary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{s.title}</h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{s.subtitle}</p>
+    </div>
+
+    {knowledge.length > 0 && (
+      <>
+        <h3 class="font-semibold text-xl mb-5 text-center" style="color: var(--text-primary);">🔬 {s.knowledgeTitle}</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          {knowledge.map((k) => (
+            <article class="rounded-2xl p-6 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+              <p class="text-2xl mb-3" aria-hidden="true">{k.icon}</p>
+              <h4 class="font-semibold text-base mb-2" style="color: var(--text-primary);">{k.title}</h4>
+              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{k.body}</p>
+            </article>
+          ))}
+        </div>
+      </>
+    )}
+
+    {duty.length > 0 && (
+      <div class="max-w-4xl mx-auto rounded-3xl p-6 md:p-8 border" style="background: color-mix(in srgb, var(--accent) 8%, transparent); border-color: color-mix(in srgb, var(--accent) 28%, transparent);">
+        <h3 class="font-semibold text-xl mb-2" style="color: var(--text-primary);">🤝 {s.dutyTitle}</h3>
+        {s.dutyIntro && <p class="text-sm leading-relaxed mb-5" style="color: var(--text-secondary);">{s.dutyIntro}</p>}
+        <ul class="grid sm:grid-cols-2 gap-4">
+          {duty.map((d) => (
+            <li class="flex gap-3">
+              <span class="shrink-0 text-lg" aria-hidden="true">{d.icon}</span>
+              <span>
+                <span class="block font-semibold text-sm" style="color: var(--text-primary);">{d.title}</span>
+                <span class="block text-sm leading-relaxed mt-1" style="color: var(--text-secondary);">{d.body}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {s.sourceNote && (
+      <p class="max-w-4xl mx-auto mt-6 text-xs leading-relaxed text-center" style="color: var(--text-muted);">{s.sourceNote}</p>
+    )}
+  </div>
+</section>
