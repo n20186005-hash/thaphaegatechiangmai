@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "清迈塔佩门（Tha Phae Gate）游玩指南：历史、拍照攻略与地图位置",
-    "description": "清迈塔佩门（ประตูท่าแพ，Tha Phae Gate）是古城东门与周日夜市起点，Google 评分 4.4（29,638 条评价）。坐标 18.7878, 98.9933 · Plus Code QXQV+48，全天免费开放。含历史沿革、古城墙与护城河、最佳拍照时间、喂鸽子礼仪以及从清迈机场到塔佩门的交通方式。",
+    "title": "清迈塔佩门攻略｜历史、地图、交通与拍照地点",
+    "description": "清迈塔佩门（Tha Phae Gate）旅游指南：了解古城东门历史、免费开放信息、最佳拍照时间、交通路线及周边景点。",
     "keywords": "塔佩门, 清迈塔佩门, ประตูท่าแพ, Tha Phae Gate, 清迈古城, 清迈古城墙, 塔佩门坐标, 塔佩门历史, 周日夜市, 清迈机场到塔佩门, 清迈地标, 清迈必去, Chiang Mai Old City, 清迈旅游"
   },
   "header": {
@@ -132,11 +132,11 @@
     "title": "塔佩门（Tha Phae Gate · 清迈）",
     "subtitle": "泰国清迈古城的东门与城市客厅 · 兰纳王朝 700 年地标 · 免费开放 · 全天可达",
     "rating": "4.4 / 5",
-    "reviewCount": "29,638 条评价",
+    "reviewCount": "29,846 条评价",
     "hours": "全天 24 小时开放",
     "openMaps": "在 Google 地图上查看 📍",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
-    "ratingSourceNote": "评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 9 月",
+    "ratingSourceNote": "评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 10 月",
     "allReviewsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
     "allReviewsLabel": "点击查看谷歌地图全部评价",
     "legend": {
@@ -258,7 +258,7 @@
       },
       {
         "label": "鸽子与拍照",
-        "text": "广场鸽群是特色，可购买鸽食互动拍照，但请勿追逐惊扰；无人机须遵守当地法规。"
+        "text": "广场鸽群是拍照特色，请勿追逐惊扰或投喂；无人机须遵守当地法规。"
       },
       {
         "label": "礼貌与音量",
@@ -314,7 +314,7 @@
         "distance": "约 3 公里",
         "bestTime": "清晨 6:30–9:30 或傍晚 16:00–19:00",
         "summary": "以城门为起点，走读古城东半部的核心寺院与街区，节奏轻快、全程以平路为主。",
-        "tip": "周日下午起塔佩路封闭为步行街，人流量显著上升，建议把主要路段安排在上午完成。"
+        "tip": "周日下午起城门西侧的拉差达门路（Ratchadamnoen Road）封闭为步行街，人流量显著上升，建议把主要路段安排在上午完成。"
       },
       {
         "icon": "🗺️",
@@ -419,7 +419,7 @@
         "text": "傍晚回到塔佩门一带，周日可逛著名的周日夜市步行街，品尝小吃与手作。"
       }
     ],
-    "disclaimer": "以上路线为步行参考，实际用时受停留时间与天气影响；周日夜市仅在每周日 16:00 后封闭塔佩路一带，建议错峰前往。"
+    "disclaimer": "以上路线为步行参考，实际用时受停留时间与天气影响；周日夜市仅在每周日 16:00 后封闭城门西侧的拉差达门路（Ratchadamnoen Road）一带，建议错峰前往。"
   },
   "intro": {
     "title": "什么是塔佩门？",
@@ -441,7 +441,7 @@
       "items": [
         "清迈的『东大门』：古城五座主城门之一，是古城与城外（夜市、湄平河）的东向连接点。",
         "城市客厅与鸽子的家：开阔广场常年有鸽群，是旅客与市民最爱的休憩、拍照与集合点。",
-        "周日夜市起点：每周日傍晚，塔佩路自城门向西封闭为步行街，是清迈最著名的市集之一。"
+        "周日夜市起点：每周日傍晚，城门西侧的拉差达门路（Ratchadamnoen Road）自城门向西封闭为步行街，是清迈最著名的市集之一。"
       ]
     }
   },
@@ -509,7 +509,7 @@
         "description": "古城范围不大，从塔佩门步行可达多数寺庙与市集。",
         "details": [
           "古城内提供自行车租赁，沿护城河骑行也很惬意。",
-          "周日夜市期间塔佩路封闭为步行街，步行最舒适。"
+          "周日夜市期间城门西侧的拉差达门路（Ratchadamnoen Road）封闭为步行街，步行最舒适。"
         ]
       }
     ],
@@ -679,7 +679,7 @@
         "koTitleZh": "塔佩门城市广场",
         "title": "城市广场说明牌",
         "location": "广场中央",
-        "body": "说明广场作为市民休憩、集会、喂鸽与节庆举办地的当代角色。"
+        "body": "说明广场作为市民休憩、集会与节庆举办地的当代角色。"
       }
     ]
   },
@@ -825,15 +825,15 @@
     "title": "田野观察与公众记录",
     "subtitle": "评分同步自谷歌地图（Google Maps）用户评价；下方要点为本站编辑根据公开评价平台常见反馈整理的摘要。",
     "rating": "4.4 / 5",
-    "total": "29,638 条评价",
-    "cta": "📍 在谷歌地图查看全部 29,638 条评价",
+    "total": "29,846 条评价",
+    "cta": "📍 在谷歌地图查看全部 29,846 条评价",
     "mapLabel": "在 Google 地图上查看位置",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
     "source": "评分与评价数同步自谷歌地图用户评价（第三方聚合评分）",
-    "sourceNote": "本页评分（4.4 / 5）与评价总数（29,638 条）同步自谷歌地图（Google Maps）用户评价，同步时间：2026 年 9 月。评分及评价内容的版权归原作者与谷歌地图所有，本站仅作引用与展示。",
+    "sourceNote": "本页评分（4.4 / 5）与评价总数（29,846 条）同步自谷歌地图（Google Maps）用户评价，同步时间：2026 年 10 月。评分及评价内容的版权归原作者与谷歌地图所有，本站仅作引用与展示。",
     "sourceLinkLabel": "来源：谷歌地图用户评价",
     "allReviewsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
-    "updatedLabel": "评分与评价总数同步时间：2026 年 9 月",
+    "updatedLabel": "评分与评价总数同步时间：2026 年 10 月",
     "itemsNote": "以下主题评分与要点为本站编辑根据公开评价平台的常见反馈整理的摘要（编辑整理，非逐字引用个别评论），仅供参考；个别评论原文与作者请见 Google 地图。",
     "featuredNote": "以上引述为编辑整理的公开反馈要点摘要，非逐字引用个别评论；评论原文与作者请见 Google 地图。",
     "featuredTitle": "田野观察与公众记录（Field Observations & Public Records）",
@@ -992,9 +992,9 @@
     "subtitle": "本页信息对照考证自以下公开与官方渠道，评分与评价同步自谷歌地图。",
     "ratingTitle": "评分与用户评价",
     "ratingValue": "4.4 / 5",
-    "ratingCount": "29,638 条评价 · 同步时间 2026 年 9 月",
-    "ratingNote": "评分与评价总数（4.4 / 5、29,638 条）同步自谷歌地图（Google Maps）用户评价，版权归原作者及谷歌地图所有，本站仅作引用与展示。",
-    "ratingLink": "在谷歌地图查看全部 29,638 条评价",
+    "ratingCount": "29,846 条评价 · 同步时间 2026 年 10 月",
+    "ratingNote": "评分与评价总数（4.4 / 5、29,846 条）同步自谷歌地图（Google Maps）用户评价，版权归原作者及谷歌地图所有，本站仅作引用与展示。",
+    "ratingLink": "在谷歌地图查看全部 29,846 条评价",
     "officialTitle": "官方与权威机构",
     "officialNote": "以下为目的地官方 / 权威信息源，供核对与延伸阅读：",
     "portalText": "获取官方更新与区域旅游信息，请访问",
@@ -1174,11 +1174,11 @@
           },
           {
             "q": "周日夜市怎么逛？",
-            "a": "每周日 16:00 后塔佩路自城门向西封闭为步行街，从塔佩门起步一路向西最顺。"
+            "a": "每周日 16:00 后城门西侧的拉差达门路（Ratchadamnoen Road）自城门向西封闭为步行街，从塔佩门起步一路向西最顺。"
           },
           {
             "q": "适合带老人小孩吗？",
-            "a": "广场平坦、节奏舒缓，喂鸽与拍照很受家庭欢迎；注意防晒与补水即可。"
+            "a": "广场平坦、节奏舒缓，看鸽与拍照很受家庭欢迎；注意防晒与补水即可。"
           }
         ]
       },
@@ -1230,7 +1230,7 @@
         "icon": "🕊️",
         "thTitle": "การเยี่ยมชมและมารยาท",
         "enTitle": "Visiting & etiquette",
-        "en": "The square is free and open around the clock: no ticket booth, no closing time. Cover your shoulders and knees and remove your shoes before entering nearby temples, keep your voice low, do not climb or sit on the brickwork, and do not feed the pigeons — feeding concentrates the flock, accelerates corrosion of the monument and creates hygiene risks. On Sundays from about 16:00, Tha Phae Road closes westwards for the Walking Street market."
+        "en": "The square is free and open around the clock: no ticket booth, no closing time. Cover your shoulders and knees and remove your shoes before entering nearby temples, keep your voice low, do not climb or sit on the brickwork, and do not feed the pigeons — feeding concentrates the flock, accelerates corrosion of the monument and creates hygiene risks. On Sundays from about 16:00, Ratchadamnoen Road — the street immediately west of the gate — closes for the Walking Street market."
       }
     ]
   },
@@ -1292,7 +1292,7 @@
       "highlight": "从『木筏码头』的历史意象，到今天的鸽群广场与节庆舞台，塔佩门是清迈将历史融入日常的缩影。",
       "points": [
         "名称承载古城依水而兴的记忆。",
-        "广场是市民集会、喂鸽与拍照的公共场所。",
+        "广场是市民集会与拍照的公共场所。",
         "节庆期间化身城市舞台，连接传统与当下。"
       ],
       "ctaLabel": "查看节庆日历",
@@ -1677,7 +1677,7 @@
         "name": "停车",
         "where": "古城外环路与周边商业体停车场",
         "detail": "城门紧邻主干道，路边车位有限且常有时段管制；自驾建议停入古城外环路或周边商业体停车场后步行进入。",
-        "tip": "周日夜市时段塔佩路封闭，停车需求最紧张，尽量提前抵达或改用其他交通方式。"
+        "tip": "周日夜市时段城门西侧的拉差达门路（Ratchadamnoen Road）封闭，停车需求最紧张，尽量提前抵达或改用其他交通方式。"
       },
       {
         "icon": "⛽",
@@ -1822,7 +1822,7 @@
         "icon": "🛕",
         "name": "周日夜市",
         "time": "每周日 16:00 起",
-        "note": "塔佩路封闭为步行街，城门成为整条动线的起点。"
+        "note": "城门西侧的拉差达门路（Ratchadamnoen Road）封闭为步行街，城门成为整条动线的起点。"
       }
     ],
     "note": "表内气候区间为多年平均的常态估算，用于行程规划参考；出行前请以实时预报与现场公告为准。"

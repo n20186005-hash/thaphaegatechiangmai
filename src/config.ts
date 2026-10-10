@@ -22,7 +22,7 @@ export const ogLocale: Record<string, string> = {
  * 便于搜索引擎在 Knowledge Graph 中精确锚定该节点。
  *
  * 最新数据来源：Google 地图商户信息（Tha Phae Gate / ประตูท่าแพ）
- * 评分 4.4 · 29,638 条评价（同步时间 2026-09，见 ratingSyncedAt）
+ * 评分 4.4 · 29,846 条评价（同步时间 2026-10，见 ratingSyncedAt）
  */
 export const attraction = {
   domain: DOMAIN,
@@ -77,10 +77,10 @@ export const attraction = {
   //     sources.ratingValue、sources.ratingCount、meta.description
   //   页面必须同时标注来源（Google 地图使用者评价）+ 可点击的“全部评价”链接 + 同步时间
   ratingValue: '4.4',
-  reviewCount: 29638,
+  reviewCount: 29846,
   bestRating: '5',
   worstRating: '1',
-  ratingSyncedAt: '2026-09',
+  ratingSyncedAt: '2026-10',
 
   // 图片资源
   heroImage: '/gallery/tha-phae-gate-24.jpg',

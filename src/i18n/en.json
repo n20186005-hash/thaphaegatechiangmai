@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Tha Phae Gate Chiang Mai (ประตูท่าแพ): Visitor Guide, History & Map",
-    "description": "Plan your visit to Tha Phae Gate (ประตูท่าแพ), the 13th-century east gate of Chiang Mai Old City — rated 4.4★ from 29,638 Google reviews. GPS 18.7878, 98.9933 · Plus Code QXQV+48, free and open 24 hours, photo tips, old city walls, Sunday Walking Street and how to get there from Chiang Mai Airport.",
+    "title": "Tha Phae Gate Chiang Mai: History, Map & Visitor Guide",
+    "description": "Explore Tha Phae Gate in Chiang Mai, Thailand. Discover its history, location, free admission, best photo spots, nearby attractions and travel tips.",
     "keywords": "Tha Phae Gate, Tha Phae Gate Chiang Mai, ประตูท่าแพ, Chiang Mai Old City, Chiang Mai old city walls, Tha Phae Gate coordinates, Tha Phae Gate history, Sunday Walking Street, how to get to Tha Phae Gate, things to do in Chiang Mai"
   },
   "header": {
@@ -132,11 +132,11 @@
     "title": "Tha Phae Gate (Chiang Mai)",
     "subtitle": "The eastern gate and living room of Chiang Mai Old City, Thailand · A 700-year Lan Na landmark · Free · Open 24 hours",
     "rating": "4.4 / 5",
-    "reviewCount": "29,638 reviews",
+    "reviewCount": "29,846 reviews",
     "hours": "Open 24 hours",
     "openMaps": "View on Google Maps 📍",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
-    "ratingSourceNote": "Rating and review count synced from Google Maps user reviews · Sep 2026",
+    "ratingSourceNote": "Rating and review count synced from Google Maps user reviews · Oct 2026",
     "allReviewsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
     "allReviewsLabel": "See all reviews on Google Maps",
     "legend": {
@@ -258,7 +258,7 @@
       },
       {
         "label": "Pigeons & photos",
-        "text": "The square's pigeons are a highlight; buy feed to interact and photograph, but don't chase them. Drones must follow local rules."
+        "text": "The square's pigeons are a popular photo subject; do not chase or feed them, and follow on-site municipal rules. Drones must follow local rules."
       },
       {
         "label": "Courtesy & volume",
@@ -419,11 +419,11 @@
         "text": "Return to the gate area in the evening; on Sundays, stroll the famous Sunday Walking Street for food and crafts."
       }
     ],
-    "disclaimer": "These routes are walking references; actual time depends on how long you linger and on the weather. The Sunday Walking Street closes Tha Phae Road from ~16:00 on Sundays — go early to avoid crowds."
+    "disclaimer": "These routes are walking references; actual time depends on how long you linger and on the weather. The Sunday Walking Street closes Ratchadamnoen Road (the street immediately west of the gate) from ~16:00 on Sundays — go early to avoid crowds."
   },
   "intro": {
     "title": "What is Tha Phae Gate?",
-    "description": "Tha Phae Gate (ประตูท่าแพ) sits on the eastern wall of Chiang Mai's Old City and is its most representative gate — today also the city's living room. 'Tha Phae' means 'raft pier' in Thai: the gate historically faced the Ping River, where teak rafts landed to trade. Today the gate is free and open all day; its square is a hub for feeding pigeons, photos, gatherings and festivals, and the starting point of the Sunday Walking Street.",
+    "description": "Tha Phae Gate (ประตูท่าแพ) sits on the eastern wall of Chiang Mai's Old City and is its most representative gate — today also the city's living room. 'Tha Phae' means 'raft pier' in Thai: the gate historically faced the Ping River, where teak rafts landed to trade. Today the gate is free and open all day; its square is a hub for photos, gatherings and festivals, and the starting point of the Sunday Walking Street.",
     "entity": {
       "heading": "About Tha Phae Gate",
       "welcome": "Welcome to Tha Phae Gate (ประตูท่าแพ), widely recognized as the central Tha Phae Gate. Located in the heart of Chiang Mai, Chiang Mai Old City, Thailand, this destination serves as a primary hub for travelers visiting the region.",
@@ -441,7 +441,7 @@
       "items": [
         "The 'East Gate' of Chiang Mai: one of the five main gates, the eastern link between the old city and the outside (night bazaar, Ping River).",
         "Home of the living room and the pigeons: an open square with year-round pigeons, a favorite rest, photo and meeting spot for visitors and locals.",
-        "Start of the Sunday Walking Street: every Sunday evening, Tha Phae Road closes west from the gate into a pedestrian market — one of Chiang Mai's most famous events."
+        "Start of the Sunday Walking Street: every Sunday evening, Ratchadamnoen Road — the street immediately west of the gate — closes from the gate into a pedestrian market — one of Chiang Mai's most famous events."
       ]
     }
   },
@@ -679,7 +679,7 @@
         "koTitleZh": "Tha Phae Gate square",
         "title": "Civic square plaque",
         "location": "Center of the square",
-        "body": "Explains the square's contemporary role as a place for citizens to rest, gather, feed pigeons and hold festivals."
+        "body": "Explains the square's contemporary role as a place for citizens to rest, gather and hold festivals."
       }
     ]
   },
@@ -825,15 +825,15 @@
     "title": "What travelers say",
     "subtitle": "Ratings synced from Google Maps user reviews; the notes below are editorial summaries of feedback commonly seen on public review platforms.",
     "rating": "4.4 / 5",
-    "total": "29,638 reviews",
-    "cta": "📍 See all 29,638 reviews on Google Maps",
+    "total": "29,846 reviews",
+    "cta": "📍 See all 29,846 reviews on Google Maps",
     "mapLabel": "View location on Google Maps",
     "mapsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
     "source": "Rating and review count synced from Google Maps user reviews (third-party aggregate)",
-    "sourceNote": "The rating (4.4 / 5) and review count (29,638) on this page are synced from Google Maps user reviews, as of September 2026. The rating and the review content are the property of the original authors and Google Maps; this site cites and displays them for reference only.",
+    "sourceNote": "The rating (4.4 / 5) and review count (29,846) on this page are synced from Google Maps user reviews, as of October 2026. The rating and the review content are the property of the original authors and Google Maps; this site cites and displays them for reference only.",
     "sourceLinkLabel": "Source: Google Maps user reviews",
     "allReviewsUrl": "https://maps.app.goo.gl/J8vLsp9TYAQarv1k9",
-    "updatedLabel": "Rating & review count synced: September 2026",
+    "updatedLabel": "Rating & review count synced: October 2026",
     "itemsNote": "The thematic scores and summaries below were compiled by this site's editors from feedback commonly seen on public review platforms (editorial summary, not verbatim quotes of individual reviews). For the original reviews and their authors, see Google Maps.",
     "featuredNote": "The quotes above are editorial summaries of feedback commonly seen on public review platforms — not verbatim quotes of individual reviews. See Google Maps for the original reviews and their authors.",
     "featuredTitle": "Voices from travelers",
@@ -992,9 +992,9 @@
     "subtitle": "Information on this page is verified against the public and official sources below; ratings and reviews are synced from Google Maps.",
     "ratingTitle": "Rating & user reviews",
     "ratingValue": "4.4 / 5",
-    "ratingCount": "29,638 reviews · synced Sep 2026",
-    "ratingNote": "The rating and review count (4.4 / 5, 29,638) are synced from Google Maps user reviews; copyright belongs to the original authors and Google Maps. This site cites and displays them for reference only.",
-    "ratingLink": "See all 29,638 Google Maps reviews",
+    "ratingCount": "29,846 reviews · synced Oct 2026",
+    "ratingNote": "The rating and review count (4.4 / 5, 29,846) are synced from Google Maps user reviews; copyright belongs to the original authors and Google Maps. This site cites and displays them for reference only.",
+    "ratingLink": "See all 29,846 Google Maps reviews",
     "officialTitle": "Official & authoritative bodies",
     "officialNote": "Official / authoritative destination sources for verification and further reading:",
     "portalText": "For official updates and regional tourism information, visit",
@@ -1175,11 +1175,11 @@
           },
           {
             "q": "How to enjoy the Sunday Market?",
-            "a": "From ~16:00 every Sunday, Tha Phae Road closes west from the gate into a pedestrian street — start at the gate and head west."
+            "a": "From ~16:00 every Sunday, Ratchadamnoen Road (immediately west of the gate) closes into a pedestrian street — start at the gate and head west."
           },
           {
             "q": "Good for families with kids?",
-            "a": "The flat square and pigeon feeding are family-friendly; just watch sun protection and hydration."
+            "a": "The flat square and pigeon watching are family-friendly; just watch sun protection and hydration."
           }
         ]
       },
@@ -1231,7 +1231,7 @@
         "icon": "🕊️",
         "thTitle": "การเยี่ยมชมและมารยาท",
         "enTitle": "Visiting & etiquette",
-        "en": "The square is free and open around the clock: no ticket booth, no closing time. Cover your shoulders and knees and remove your shoes before entering nearby temples, keep your voice low, do not climb or sit on the brickwork, and do not feed the pigeons — feeding concentrates the flock, accelerates corrosion of the monument and creates hygiene risks. On Sundays from about 16:00, Tha Phae Road closes westwards for the Walking Street market."
+        "en": "The square is free and open around the clock: no ticket booth, no closing time. Cover your shoulders and knees and remove your shoes before entering nearby temples, keep your voice low, do not climb or sit on the brickwork, and do not feed the pigeons — feeding concentrates the flock, accelerates corrosion of the monument and creates hygiene risks. On Sundays from about 16:00, Ratchadamnoen Road — the street immediately west of the gate — closes for the Walking Street market."
       }
     ]
   },
@@ -1326,7 +1326,7 @@
           "label": "Friendly"
         },
         "location": "Open ground in front",
-        "background": "Buy feed to interact and shoot — a relaxed favorite for families and couples.",
+        "background": "Photographing the pigeons is a relaxed favorite for families and couples — please do not feed them.",
         "points": [
           "Backlight pigeon silhouettes",
           "Burst mode for takeoff"
@@ -1678,7 +1678,7 @@
         "name": "Parking",
         "where": "Outer ring road and shopping-centre car parks",
         "detail": "The gate sits on a main road, so kerbside spaces are limited and often restricted by time. If you drive, park on the outer ring road or in a nearby shopping-centre car park and walk in.",
-        "tip": "On Sunday market nights Tha Phae Road closes and demand peaks — arrive early or use another mode of transport."
+        "tip": "On Sunday market nights Ratchadamnoen Road (west of the gate) closes and demand peaks — arrive early or use another mode of transport."
       },
       {
         "icon": "⛽",
@@ -1823,7 +1823,7 @@
         "icon": "🛕",
         "name": "Sunday Walking Street",
         "time": "Every Sunday from 4:00 pm",
-        "note": "Tha Phae Road closes as a pedestrian street and the gate becomes the start of the whole route."
+        "note": "Ratchadamnoen Road closes as a pedestrian street and the gate becomes the start of the whole route."
       }
     ],
     "note": "The seasonal ranges above are multi-year averages intended for trip planning; before you travel, check the live forecast and on-site announcements."

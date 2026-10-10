@@ -23,7 +23,7 @@ export default defineConfig({
       // 在 sitemap 中声明语言分支，帮助搜索引擎理解三语互相对应关系
       i18n: {
         defaultLocale: 'th',
-        locales: { th: 'th-TH', en: 'en-US', zh: 'zh-CN' },
+        locales: { th: 'th-TH', en: 'en-US', zh: 'zh-Hans' },
       },
       // 接口不收录；根路径是跳转页（301 到默认语言），也不放进站点地图
       filter: (page) => !page.includes('/api/') && page !== 'https://thaphaegatechiangmai.com/',
