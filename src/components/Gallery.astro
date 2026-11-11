@@ -7,7 +7,7 @@ const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
 const imageRights = messages.footer?.imageRights;
 
-let photoFiles = [];
+let photoFiles: string[] = [];
 try {
   const allowedFiles = [
     'tha-phae-gate-20.jpg',

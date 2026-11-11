@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { guides, guideUi, editorialNotes, type Locale } from '../../../data/guides';
+import { placeProfiles } from '../../../data/placeProfiles';
+import { visitorFacts } from '../../../data/visitorFacts';
+import { languagesList } from '../../../i18n/ui';
+export function getStaticPaths() {
+  return languagesList.flatMap(lang => guides.map(g => ({ params: { lang, slug: g.slug }, props: { guide: g } })));
+}
+const { guide } = Astro.props;
+const lang = Astro.params.lang as Locale;
+const ui = guideUi[lang];
+const mapUrl = guide.mapQuery ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(guide.mapQuery)}` : 'https://maps.app.goo.gl/J8vLsp9TYAQarv1k9';
+const related = guides.filter(g => g.slug !== guide.slug && (g.kind === guide.kind || g.kind === 'place')).slice(0, 6);
+const note = editorialNotes[guide.slug]?.[lang] ?? guide.focus[lang];
+const profile = placeProfiles[guide.slug];
+const facts = visitorFacts[guide.slug];
+const gatePhotos = ['/gallery/tha-phae-gate-20.jpg','/gallery/tha-phae-gate-24.jpg','/gallery/tha-phae-gate-25.jpg'];
+const gatePhoto = gatePhotos[guides.findIndex(g => g.slug === guide.slug) % gatePhotos.length];
+const commonsPhoto: Record<string,string> = {
+  'wat-chedi-luang': 'https://commons.wikimedia.org/wiki/Special:FilePath/Wat_Chedi_Luang,_Stupa,_Chiang_Mai,_Thailand.jpg',
+  'wat-phra-singh': 'https://commons.wikimedia.org/wiki/Special:FilePath/Wat_Phra_Singh,_Chiang_Mai.jpg',
+  'wat-chiang-man': 'https://commons.wikimedia.org/wiki/Special:FilePath/Wat_Chiang_Mun,_Chiang_Mai_(48108175991).jpg',
+  'three-kings-monument': '/guide-photos/three-kings-monument.jpg',
+  'chiang-mai-city-arts-centre': '/guide-photos/three-kings-monument.jpg',
+  'chiang-mai-night-bazaar': '/guide-photos/chiang-mai-night-bazaar.jpg',
+  'wat-lok-moli': 'https://commons.wikimedia.org/wiki/Special:FilePath/Wat_Lok_Moli_-_Welcome_to_Chiang_Mai.jpg',
+  'wat-buppharam': 'https://commons.wikimedia.org/wiki/Special:FilePath/Wat_Buppharam_in_Chiang_Mai.jpg',
+  'warorot-market': 'https://commons.wikimedia.org/wiki/Special:FilePath/Warorot_market_1.jpg',
+  'ping-river-walk': 'https://commons.wikimedia.org/wiki/Special:FilePath/Ping_River_in_Chiang_Mai_1.jpg',
+};
+const photo = guide.kind === 'place' ? commonsPhoto[guide.slug] : gatePhoto;
+const detail = {
+ th:{heroTag:'คู่มือประวัติศาสตร์ การเดินทาง และจุดชมใกล้ประตูท่าแพ',review:'ดูคะแนนและรีวิวปัจจุบันบน Google Maps',intro:'สำรวจสถานที่',tips:'เคล็ดลับการเที่ยว',features:'จุดเด่นที่ไม่ควรพลาด',info:'ข้อมูลพื้นฐาน',kind:'ประเภท',where:'ที่ตั้ง',manager:'ผู้ดูแล',time:'เวลาที่แนะนำ',opening:'เวลาเปิดเข้าชม',price:'ค่าเข้าชม',transport:'วิธีเดินทาง',experience:'เสน่ห์ของสถานที่',culture:'ความหมายทางวัฒนธรรม',lodging:'แนะนำย่านที่พัก',reviews:'ความคิดเห็นนักท่องเที่ยว',reviewsText:'รีวิวและคะแนนเปลี่ยนแปลงตามเวลา ดูความคิดเห็นล่าสุดจากผู้เดินทางจริงผ่านหน้าสถานที่บน Google Maps',guide:'แผนที่และการนำทาง',address:'บริเวณที่ตั้ง',fromGate:'เริ่มที่ประตูท่าแพ',duration:'เวลาเที่ยว'},
+ en:{heroTag:'History, practical travel and sightseeing near Tha Phae Gate',review:'View current rating and reviews on Google Maps',intro:'Discover this place',tips:'Visit tips',features:'Highlights',info:'Basic information',kind:'Attraction type',where:'Location',manager:'Management',time:'Suggested visit',opening:'Opening hours',price:'Admission',transport:'How to get here',experience:'Why this place matters',culture:'Cultural significance',lodging:'Where to stay nearby',reviews:'Visitor reviews',reviewsText:'Review scores and comments change over time. Read recent firsthand experiences on this place’s Google Maps listing.',guide:'Address, map and navigation',address:'Location area',fromGate:'From Tha Phae Gate',duration:'Suggested duration'},
+ zh:{heroTag:'塔佩门周边历史、交通与实用游览指南',review:'在 Google 地图查看当前评分与游客评论',intro:'探索景点',tips:'游览建议',features:'景点特色',info:'基本信息',kind:'景点类型',where:'所在地',manager:'管理主体',time:'建议停留',opening:'开放时间',price:'门票价格',transport:'交通方式',experience:'发现景点魅力',culture:'人文与文化意义',lodging:'周边住宿建议',reviews:'游客评价',reviewsText:'评分和评论会随时间变化，建议通过该景点的 Google 地图地点页查看近期真实访客反馈。',guide:'地址、地图与导航',address:'所在区域',fromGate:'从塔佩门出发',duration:'建议游览时间'},
+}[lang];
+const area = facts?.area[lang] ?? (lang==='th'?'ประตูท่าแพ ฝั่งตะวันออกของเมืองเก่าเชียงใหม่':lang==='en'?'Tha Phae Gate, eastern Chiang Mai Old City':'清迈古城东侧塔佩门');
+const duration = facts?.duration[lang] ?? (lang==='th'?'ประมาณ 20–60 นาทีตามหัวข้อที่เลือก':lang==='en'?'About 20–60 minutes depending on this guide':'约 20–60 分钟，视攻略主题而定');
+const hours = facts?.hours[lang] ?? (lang==='th'?'ลานประตูเมืองเป็นพื้นที่สาธารณะกลางแจ้ง ใช้ได้ตามประกาศพื้นที่':lang==='en'?'The outdoor gate square is generally accessible, subject to local event restrictions.':'城门户外公共广场一般可进入，活动期间以现场管制为准。');
+const fee = facts?.price[lang] ?? (lang==='th'?'ไม่เก็บบัตรเข้าชมลานสาธารณะโดยทั่วไป':lang==='en'?'No general ticket for the outdoor public square.':'户外公共广场通常无需门票。');
+const qa = facts ? (lang==='th' ? [
+  [`${guide.title.th} มีอะไรน่าชม?`,facts.experience.th],
+  [`${guide.title.th} เปิดเวลาใด?`,facts.hours.th],
+  [`${guide.title.th} ต้องซื้อตั๋วหรือไม่?`,facts.price.th],
+  ['เดินทางจากประตูท่าแพอย่างไร?',profile?.walking.th ?? facts.access.th],
+  ['ควรพักแถวไหน?',facts.stay.th],
+] : lang==='en' ? [
+  [`What can I see at ${guide.title.en}?`,facts.experience.en],
+  [`When is ${guide.title.en} open?`,facts.hours.en],
+  ['Is there an admission fee?',facts.price.en],
+  ['How do I get here from Tha Phae Gate?',profile?.walking.en ?? facts.access.en],
+  ['Where is it convenient to stay?',facts.stay.en],
+] : [
+  [`${guide.title.zh}有什么看点？`,facts.experience.zh],
+  [`${guide.title.zh}何时开放？`,facts.hours.zh],
+  ['参观需要购买门票吗？',facts.price.zh],
+  ['从塔佩门怎么过去？',profile?.walking.zh ?? facts.access.zh],
+  ['住在哪里方便？',facts.stay.zh],
+]) : [[ui.q1,ui.a1],[ui.q2,ui.a2],[ui.q3,ui.a3]];
+const managerText = profile?.manager[lang] ?? (lang === 'th' ? 'ประตูท่าแพและลานสาธารณะโดยรอบอยู่ในพื้นที่ดูแลของเทศบาลนครเชียงใหม่ โดยงานอนุรักษ์โบราณสถานอาจเกี่ยวข้องกับหน่วยงานมรดกวัฒนธรรมของไทย' : lang === 'en' ? 'Tha Phae Gate and its adjoining public square fall within Chiang Mai Municipality’s public-space responsibilities. Historic fabric conservation may additionally involve Thailand’s heritage authorities.' : '塔佩门及周边公共广场属于清迈市政府公共空间管理范围；历史建筑本体的文物保护还可能涉及泰国文化遗产主管部门。');
+const local = {
+ th:{management:'เกี่ยวกับสถานที่และผู้ดูแล',highlights:'ประวัติและลักษณะสถาปัตยกรรม',practical:'ข้อมูลพื้นฐานและสิ่งที่ควรทราบ',photography:'มุมถ่ายภาพ',fromGate:'เส้นทางเดินจากประตูท่าแพ',steps:'แผนเที่ยว 3 ขั้นตอน',step1:'เริ่มจากตำแหน่งบนแผนที่และตรวจทางเข้า',step2:'สังเกตรายละเอียดสำคัญโดยไม่รบกวนผู้ใช้พื้นที่',step3:'วางแผนเดินต่อและพักตามสภาพอากาศ',visitNow:'ตรวจข้อมูลก่อนเดินทาง'},
+ en:{management:'About this place and its management',highlights:'History and architectural highlights',practical:'Essential visitor information',photography:'Photography viewpoints',fromGate:'Walking route from Tha Phae Gate',steps:'A three-step visit',step1:'Find the exact map pin and check the entrance',step2:'Explore the key features while respecting other visitors',step3:'Plan the onward walk and a weather-aware break',visitNow:'Check before visiting'},
+ zh:{management:'关于景点与管理主体',highlights:'历史背景与建筑特色',practical:'基本资料与游览须知',photography:'拍摄机位建议',fromGate:'从塔佩门出发的步行路线',steps:'三步游览路线',step1:'确认地图地点及实际入口',step2:'观察核心特色，并尊重其他游客与使用者',step3:'安排下一站与天气适宜的休息点',visitNow:'出发前核对'},
+}[lang];
+const schema = { '@context':'https://schema.org', '@type':'Article', headline:guide.title[lang], description:guide.focus[lang], inLanguage:lang, mainEntityOfPage:`https://thaphaegatechiangmai.com/${lang}/guides/${guide.slug}/` };
+---
+<BaseLayout title={`${guide.title[lang]} | Tha Phae Gate Chiang Mai`} description={guide.focus[lang]} path={`guides/${guide.slug}`}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schema)}></script>
+  <main class="max-w-4xl mx-auto px-4 py-10 sm:py-16" style="color:var(--text-primary)">
+    <nav class="text-sm mb-8" aria-label="Breadcrumb" style="color:var(--text-secondary)"><a href={`/${lang}/`} style="color:var(--accent)">{ui.home}</a> / <a href={`/${lang}/guides/`} style="color:var(--accent)">{ui.back}</a> / {guide.title[lang]}</nav>
+    <header class="mb-12">
+      <p class="uppercase tracking-widest text-sm mb-3" style="color:var(--accent)">Chiang Mai · {detail.heroTag}</p>
+      <h1 class="text-3xl sm:text-5xl font-bold leading-tight mb-6">{guide.title[lang]}</h1>
+      <p class="text-lg leading-relaxed" style="color:var(--text-secondary)">{guide.focus[lang]}</p>
+      <div class="flex flex-wrap gap-3 mt-5 text-sm" style="color:var(--text-secondary)"><span class="rounded-full border px-3 py-2" style="border-color:var(--border-color)">⏱ {duration}</span><span class="rounded-full border px-3 py-2" style="border-color:var(--border-color)">📍 {area}</span></div>
+      <a href={mapUrl} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-5 py-3 mt-6 font-semibold" style="background:var(--accent);color:white">📍 {ui.map} ↗</a>
+      <p class="text-sm mt-3"><a href={mapUrl} target="_blank" rel="noopener noreferrer" style="color:var(--accent)">{detail.review} ↗</a></p>
+    </header>
+    {photo && <figure class="mb-12"><img src={photo} alt={guide.kind === 'place' ? guide.title[lang] : 'Tha Phae Gate brick wall and public square, Chiang Mai'} loading="lazy" class="w-full max-h-[500px] object-cover rounded-2xl" /><figcaption class="text-sm mt-2" style="color:var(--text-secondary)">{guide.kind === 'place' ? guide.title[lang] : 'Tha Phae Gate · Chiang Mai'}</figcaption></figure>}
+    <div class="space-y-10 leading-relaxed">
+      <section><h2 class="text-2xl font-semibold mb-4">{detail.intro}</h2><p>{note}</p><p class="mt-3" style="color:var(--text-secondary)">{guide.focus[lang]}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{detail.tips}</h2><p>{facts?.access[lang] ?? ui.note}</p><p class="mt-3" style="color:var(--text-secondary)">{facts?.duration[lang] ?? duration}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{detail.features}</h2><p>{facts?.experience[lang] ?? note}</p></section>
+      <section class="rounded-2xl p-6 sm:p-8 border" style="background:var(--card-bg);border-color:var(--border-color)"><h2 class="text-2xl font-semibold mb-4">{local.management}</h2><p>{managerText}</p><p class="mt-4" style="color:var(--text-secondary)">{note}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-5">{detail.info}</h2><dl class="rounded-2xl border overflow-hidden" style="border-color:var(--border-color)">{[[detail.kind,facts?.category[lang] ?? (lang==='th'?'ประตูเมืองและคู่มือท่องเที่ยว':lang==='en'?'Historic city gate and travel guide':'历史城门与旅游攻略')],[detail.where,area],[detail.manager,managerText],[detail.duration,duration],[detail.opening,hours],[detail.price,fee]].map(([label,value])=><div class="grid sm:grid-cols-[10rem_1fr] gap-1 sm:gap-5 p-4 border-b last:border-0" style="border-color:var(--border-color)"><dt class="font-semibold">{label}</dt><dd style="color:var(--text-secondary)">{value}</dd></div>)}</dl></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{detail.opening}</h2><p>{hours}</p><h2 class="text-2xl font-semibold mt-7 mb-4">{detail.price}</h2><p>{fee}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{local.highlights}</h2><p>{profile?.architecture[lang] ?? note}</p><p class="mt-4" style="color:var(--text-secondary)">{guide.focus[lang]}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{detail.experience}</h2><p>{facts?.experience[lang] ?? note}</p><h3 class="text-xl font-semibold mt-6 mb-3">{detail.culture}</h3><p>{facts?.culture[lang] ?? (profile?.facts[lang] ?? guide.focus[lang])}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{local.practical}</h2><p>{profile?.facts[lang] ?? note}</p><p class="mt-4" style="color:var(--text-secondary)">{ui.note}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{ui.visit}</h2><p>{facts?.access[lang] ?? (lang === 'th' ? 'เริ่มจากสำรวจพื้นที่และดูป้ายข้อมูลที่หน้างาน จากนั้นเลือกเดินต่อเฉพาะจุดที่สนใจ วางแผนพักดื่มน้ำในช่วงอากาศร้อน' : lang === 'en' ? 'Begin with the setting and on-site interpretation. Continue to the places that interest you and allow time for a water break in hot weather.' : '建议先观察广场环境与现场说明，再按兴趣选择延伸参观地点，并在炎热时段预留饮水休息。')}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{local.fromGate}</h2><p>{profile?.walking[lang] ?? (lang === 'th' ? 'เริ่มต้นที่ประตูท่าแพและสำรวจเส้นทางในเมืองเก่าตามแผนที่ โดยให้ความสำคัญกับทางข้ามถนน' : lang === 'en' ? 'Start at Tha Phae Gate, follow the relevant Old City route on the map and prioritize safe crossings.' : '以塔佩门为起点，沿地图规划古城路线，并优先选择安全的过街点。')}</p><p class="mt-3"><a href={mapUrl} target="_blank" rel="noopener noreferrer" style="color:var(--accent)">{ui.map} ↗</a></p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{local.steps}</h2><ol class="list-decimal pl-6 space-y-3"><li>{local.step1}</li><li>{local.step2}</li><li>{local.step3}</li></ol></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{local.photography}</h2><p>{profile?.photography[lang] ?? (lang === 'th' ? 'ลองภาพมุมกว้างของแนวอิฐประตูท่าแพจากลาน และมุมเฉียงเพื่อเห็นพื้นผิว โดยไม่เข้าไปในช่องจราจร' : lang === 'en' ? 'Use a broad frame of the gate from the square, then a diagonal angle for brick texture. Never stand in traffic to take a photograph.' : '可从广场拍摄塔佩门全景，再斜向拍摄砖墙肌理；不要进入车道取景。')}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{detail.lodging}</h2><p>{facts?.stay[lang] ?? (lang==='th'?'ที่พักในเมืองเก่าหรือฝั่งตะวันออกของคูเมืองเหมาะกับการเดินเที่ยว ระวังเสียงรบกวนจากถนนหลัก':lang==='en'?'The Old City and the eastern moat area offer convenient bases for walking; compare traffic noise and access before booking.':'古城内及护城河东侧适合步行游览，订房前应比较交通噪音与出入便利性。')}</p></section>
+      <section><h2 class="text-2xl font-semibold mb-4">{detail.reviews}</h2><p>{detail.reviewsText}</p><a class="inline-block mt-3 font-semibold" href={mapUrl} target="_blank" rel="noopener noreferrer" style="color:var(--accent)">{detail.review} ↗</a></section>
+      <section><h2 class="text-2xl font-semibold mb-5">{ui.faq}</h2><div class="space-y-5">{qa.map(([q,a]) => <div class="border-b pb-4" style="border-color:var(--border-color)"><h3 class="font-semibold mb-2">{q}</h3><p style="color:var(--text-secondary)">{a}</p></div>)}</div></section>
+      <section><h2 class="text-2xl font-semibold mb-6">{ui.back}</h2><div class="grid sm:grid-cols-2 gap-4">{related.map(g => <a class="rounded-xl border p-4 hover:opacity-75" style="border-color:var(--border-color);color:var(--accent)" href={`/${lang}/guides/${g.slug}/`}>{g.title[lang]} →</a>)}</div></section>
+      <section class="rounded-2xl border p-6" style="border-color:var(--border-color)"><h2 class="text-2xl font-semibold mb-3">{detail.guide}</h2><p>{area}</p><p class="mt-3">{profile?.walking[lang] ?? guide.focus[lang]}</p><a class="inline-block mt-5 font-semibold" href={mapUrl} target="_blank" rel="noopener noreferrer" style="color:var(--accent)">{ui.map} ↗</a></section>
+    </div>
+  </main>
+</BaseLayout>

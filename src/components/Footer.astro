@@ -39,6 +39,7 @@ const links = f.officialLinksList;
       <div>
         <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.legalLinksTitle}</h4>
         <ul class="space-y-2 text-sm">
+          <li><a href={`/${lang}/guides/`} class="hover:opacity-70" style="color: var(--text-secondary);">{lang === 'th' ? 'คู่มือเที่ยวและสถานที่ใกล้เคียง' : lang === 'en' ? 'Travel guides & nearby sights' : '旅游攻略与周边景点'}</a></li>
           <li><a href={`/${lang}/privacy-policy`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.privacy}</a></li>
           <li><a href={`/${lang}/terms-of-service`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.terms}</a></li>
           <li><a href={`/${lang}/cookie-settings`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.cookies}</a></li>

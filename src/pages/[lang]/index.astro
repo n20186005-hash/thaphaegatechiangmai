@@ -26,6 +26,7 @@ import SourcesSection from '../../components/SourcesSection.astro';
 import DeepDive from '../../components/DeepDive.astro';
 import Downloads from '../../components/Downloads.astro';
 import FAQ from '../../components/FAQ.astro';
+import NearbyGuides from '../../components/NearbyGuides.astro';
 import { getI18n, languagesList } from '../../i18n/ui';
 
 export function getStaticPaths() {
@@ -74,6 +75,7 @@ const faqLd = (() => {
   <MapEmbed />
   <Downloads />
   <FAQ />
+  <NearbyGuides />
   <OutdoorMuseum />
   <Gallery />
   <FeaturedQuotes />

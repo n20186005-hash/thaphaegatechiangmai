@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { guides, guideUi, type Locale } from '../../../data/guides';
+import { languagesList } from '../../../i18n/ui';
+export function getStaticPaths() { return languagesList.map(lang => ({ params: {lang} })); }
+const lang = Astro.params.lang as Locale;
+const ui = guideUi[lang];
+---
+<BaseLayout title={`${ui.collection} | Tha Phae Gate`} description={ui.intro} path="guides">
+  <main class="max-w-6xl mx-auto px-4 py-12 sm:py-16" style="color:var(--text-primary)">
+    <nav class="text-sm mb-7" aria-label="Breadcrumb"><a href={`/${lang}/`} style="color:var(--accent)">{ui.home}</a> / {ui.back}</nav>
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4">{ui.collection}</h1>
+    <p class="mb-10 text-lg" style="color:var(--text-secondary)">{ui.intro}</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {guides.map((g) => <article class="rounded-2xl border p-6 flex flex-col gap-3" style="background:var(--card-bg);border-color:var(--border-color)">
+        <h2 class="text-xl font-semibold"><a href={`/${lang}/guides/${g.slug}/`} style="color:var(--accent)">{g.title[lang]}</a></h2>
+        <p class="text-sm leading-relaxed flex-1" style="color:var(--text-secondary)">{g.focus[lang]}</p>
+        <a class="text-sm font-semibold" style="color:var(--accent)" href={`/${lang}/guides/${g.slug}/`}>{ui.next} →</a>
+      </article>)}
+    </div>
+  </main>
+</BaseLayout>
