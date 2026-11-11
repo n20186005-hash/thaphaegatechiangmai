@@ -843,12 +843,12 @@
         "source": "—— 自由行旅客（华语）"
       },
       {
-        "text": "『It's the perfect starting point to explore the Old City on foot — historic and lively at the same time.』",
-        "source": "—— Traveler (English)"
+        "text": "『这里是步行探索清迈古城的理想起点，既有历史氛围，也充满活力。』",
+        "source": "—— 旅客（英文原评）"
       },
       {
-        "text": "『ประตูท่าแพคือจุดเริ่มต้นของเชียงใหม่ ที่ผสานอดีตและชีวิตเมืองไว้ด้วยกัน』",
-        "source": "—— นักท่องเที่ยว (ไทย)"
+        "text": "『塔佩门是认识清迈的起点，将历史与城市生活融为一体。』",
+        "source": "—— 旅客（泰文原评）"
       }
     ],
     "items": [
@@ -1077,7 +1077,8 @@
     },
     "marketing": {
       "title": "营销 Cookie",
-      "description": "用于展示更相关的旅行信息，默认关闭。"
+      "description": "用于展示更相关的旅行信息，默认关闭。",
+      "badge": "关闭"
     },
     "save": "保存设置",
     "saved": "已保存你的偏好"

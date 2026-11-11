@@ -3,8 +3,22 @@ import { getI18n } from '../i18n/ui';
 const { lang, messages } = getI18n(Astro.url);
 const f = messages.footer;
 const links = f.officialLinksList;
+const isSecondaryPage = Astro.url.pathname.split('/').filter(Boolean).length > 1;
+const shortFooter = {
+  th: { name: 'ประตูท่าแพ', rights: 'สงวนลิขสิทธิ์', note: 'เว็บไซต์นี้เป็นโครงการข้อมูลท่องเที่ยวอิสระ และไม่มีความเกี่ยวข้องกับหน่วยงานรัฐบาลหรือองค์กรทางการใด ๆ' },
+  en: { name: 'Tha Phae Gate', rights: 'All rights reserved.', note: 'This website is an independent travel information project. We are not affiliated with any government agency or official organization.' },
+  zh: { name: '塔佩门', rights: '版權所有。', note: '本网站是一个独立的旅游信息项目。我们与任何政府机构或官方组织均无关联。' },
+}[lang] ?? { name: 'Tha Phae Gate', rights: 'All rights reserved.', note: 'This website is an independent travel information project.' };
 ---
 
+{isSecondaryPage ? (
+  <footer class="section-padding" style="background:var(--bg-tertiary);border-top:1px solid var(--border-color)">
+    <div class="max-w-6xl mx-auto px-4 text-sm space-y-2" style="color:var(--text-secondary)">
+      <p>© 2026 {shortFooter.name} · {shortFooter.rights}</p>
+      <p>{shortFooter.note}</p>
+    </div>
+  </footer>
+) : (
 <footer class="section-padding" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color);">
   <div class="max-w-6xl mx-auto px-4">
     <div class="mission-block mb-10">
@@ -61,3 +75,4 @@ const links = f.officialLinksList;
     </div>
   </div>
 </footer>
+)}
