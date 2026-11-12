@@ -1,7 +1,26 @@
 ---
 import { getI18n } from '../i18n/ui';
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const rt = messages.higashiyamaRoute;
+const routeDestinations = [
+  {
+    slug: 'three-kings-monument',
+    title: { th: 'อนุสาวรีย์สามกษัตริย์', en: 'Three Kings Monument', zh: '三王纪念碑' },
+    description: { th: 'ลานอนุสาวรีย์และเรื่องราวการก่อตั้งเชียงใหม่', en: 'Historic city-centre monument and Chiang Mai’s founding story.', zh: '古城中心的建城纪念地标，可与附近文化中心串联。' },
+  },
+  {
+    slug: 'wat-chedi-luang',
+    title: { th: 'วัดเจดีย์หลวง', en: 'Wat Chedi Luang', zh: '契迪龙寺' },
+    description: { th: 'ชมเจดีย์โบราณขนาดใหญ่และสถาปัตยกรรมล้านนา', en: 'See the monumental historic chedi and Lanna architecture.', zh: '参观宏伟古佛塔，观察兰纳建筑与寺院历史。' },
+  },
+  {
+    slug: 'wat-phra-singh',
+    title: { th: 'วัดพระสิงห์', en: 'Wat Phra Singh', zh: '帕辛寺' },
+    description: { th: 'วัดสำคัญทางตะวันตกของเมืองเก่าและศิลปะล้านนา', en: 'Explore one of the Old City’s important temples and Lanna art.', zh: '探访古城西部重要寺院，欣赏兰纳艺术与建筑细节。' },
+  },
+];
+const routeLinksTitle = { th: 'อ่านคู่มือสถานที่ตามเส้นทาง', en: 'Explore stops on this route', zh: '推荐路线 · 景点详细指南' }[lang] ?? 'Explore stops on this route';
+const routeLinksCta = { th: 'ดูคู่มือสถานที่', en: 'View destination guide', zh: '查看景点专页' }[lang] ?? 'View destination guide';
 
 // 支持「半日 / 全日」双动线；若数据缺失则回退为单条路线
 const plans = rt.plans && rt.plans.length > 0
@@ -85,6 +104,19 @@ const plans = rt.plans && rt.plans.length > 0
               )}
             </div>
           </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mt-10">
+      <h3 class="font-display text-xl sm:text-2xl font-semibold mb-5" style="color:var(--text-primary)">{routeLinksTitle}</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        {routeDestinations.map((place) => (
+          <article class="rounded-2xl border p-5" style="background:var(--card-bg);border-color:var(--border-color)">
+            <h4 class="font-semibold text-lg" style="color:var(--text-primary)">{place.title[lang] ?? place.title.en}</h4>
+            <p class="text-sm leading-relaxed mt-2 mb-4" style="color:var(--text-secondary)">{place.description[lang] ?? place.description.en}</p>
+            <a href={`/${lang}/guides/${place.slug}/`} class="text-sm font-semibold hover:underline" style="color:var(--accent)">{routeLinksCta} ↗</a>
+          </article>
         ))}
       </div>
     </div>
