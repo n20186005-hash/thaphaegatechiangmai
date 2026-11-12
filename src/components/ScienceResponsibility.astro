@@ -4,6 +4,7 @@ const { messages } = getI18n(Astro.url);
 const s = messages.scienceDuty;
 const knowledge = s.knowledge ?? [];
 const duty = s.duty ?? [];
+const mission = messages.footer?.mission;
 ---
 
 <section id="science" class="section-padding" style="background: var(--bg-secondary);">
@@ -48,6 +49,12 @@ const duty = s.duty ?? [];
 
     {s.sourceNote && (
       <p class="max-w-4xl mx-auto mt-6 text-xs leading-relaxed text-center" style="color: var(--text-muted);">{s.sourceNote}</p>
+    )}
+    {mission && (
+      <div class="max-w-4xl mx-auto mt-8 rounded-2xl p-6 border" style="background:var(--card-bg);border-color:var(--border-color)">
+        <h3 class="font-semibold text-xl mb-2" style="color:var(--text-primary)">🎯 {mission.title}</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">{mission.text}</p>
+      </div>
     )}
   </div>
 </section>

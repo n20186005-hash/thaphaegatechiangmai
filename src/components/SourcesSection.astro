@@ -1,10 +1,11 @@
 ---
 import { getI18n } from '../i18n/ui';
 import { attraction } from '../config';
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const s = messages.sources;
 const list = s?.list ?? [];
 const allReviewsUrl = attraction.reviewsShareUrl;
+const footer = messages.footer;
 ---
 
 <section id="sources" class="section-padding" style="background: var(--bg-primary);">
@@ -48,5 +49,18 @@ const allReviewsUrl = attraction.reviewsShareUrl;
     </div>
 
     <p class="text-xs leading-relaxed mt-10 text-center" style="color: var(--text-muted);">{s.disclaimer}</p>
+    <div class="mt-8 pt-6 border-t space-y-3 text-xs leading-relaxed" style="border-color:var(--border-color);color:var(--text-muted)">
+      {footer.dataSourceLabel && footer.dataSource && (
+        <p><strong>{footer.dataSourceLabel}：</strong> <span set:html={footer.dataSource}></span></p>
+      )}
+      {footer.imageRights && <p>{footer.imageRights}</p>}
+      {footer.licenseNote && <p>{footer.licenseNote}</p>}
+      <nav aria-label={footer.legalLinksTitle} class="flex flex-wrap gap-x-5 gap-y-2 pt-3">
+        <a href={`/${lang}/guides/`} class="hover:underline" style="color:var(--accent)">{lang === 'th' ? 'คู่มือเที่ยวและสถานที่ใกล้เคียง' : lang === 'en' ? 'Travel guides & nearby sights' : '旅游攻略与周边景点'}</a>
+        <a href={`/${lang}/privacy-policy`} class="hover:underline" style="color:var(--accent)">{footer.privacy}</a>
+        <a href={`/${lang}/terms-of-service`} class="hover:underline" style="color:var(--accent)">{footer.terms}</a>
+        <a href={`/${lang}/cookie-settings`} class="hover:underline" style="color:var(--accent)">{footer.cookies}</a>
+      </nav>
+    </div>
   </div>
 </section>

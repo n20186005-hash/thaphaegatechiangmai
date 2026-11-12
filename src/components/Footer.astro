@@ -1,78 +1,16 @@
 ---
 import { getI18n } from '../i18n/ui';
-const { lang, messages } = getI18n(Astro.url);
-const f = messages.footer;
-const links = f.officialLinksList;
-const isSecondaryPage = Astro.url.pathname.split('/').filter(Boolean).length > 1;
-const shortFooter = {
+const { lang } = getI18n(Astro.url);
+const copy = {
   th: { name: 'ประตูท่าแพ', rights: 'สงวนลิขสิทธิ์', note: 'เว็บไซต์นี้เป็นโครงการข้อมูลท่องเที่ยวอิสระ และไม่มีความเกี่ยวข้องกับหน่วยงานรัฐบาลหรือองค์กรทางการใด ๆ' },
   en: { name: 'Tha Phae Gate', rights: 'All rights reserved.', note: 'This website is an independent travel information project. We are not affiliated with any government agency or official organization.' },
   zh: { name: '塔佩门', rights: '版權所有。', note: '本网站是一个独立的旅游信息项目。我们与任何政府机构或官方组织均无关联。' },
 }[lang] ?? { name: 'Tha Phae Gate', rights: 'All rights reserved.', note: 'This website is an independent travel information project.' };
 ---
 
-{isSecondaryPage ? (
-  <footer class="section-padding" style="background:var(--bg-tertiary);border-top:1px solid var(--border-color)">
-    <div class="max-w-6xl mx-auto px-4 text-sm space-y-2" style="color:var(--text-secondary)">
-      <p>© 2026 {shortFooter.name} · {shortFooter.rights}</p>
-      <p>{shortFooter.note}</p>
-    </div>
-  </footer>
-) : (
-<footer class="section-padding" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color);">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="mission-block mb-10">
-      <h3 class="mission-title">🎯 {f.mission.title}</h3>
-      <p class="mission-text">{f.mission.text}</p>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      <div>
-        <h3 class="font-display text-xl font-semibold mb-3" style="color: var(--text-primary);" set:html={f.siteName}></h3>
-        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{f.rights}</p>
-      </div>
-
-      <div>
-        <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.officialResourcesTitle}</h4>
-        <ul class="space-y-2 text-sm">
-          {links.map((link) => (
-            <li>
-              <a href={link.url} target="_blank" rel="noopener noreferrer" class="hover:opacity-70 break-words" style="color: var(--accent);">
-                {link.name} ↗
-              </a>
-            </li>
-          ))}
-          <li class="pt-2 border-t" style="border-color: var(--border-color);">
-            <a href={f.mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:opacity-70 font-medium" style="color: var(--accent);">
-              {f.mapsLabel}
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-      <div>
-        <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.legalLinksTitle}</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href={`/${lang}/guides/`} class="hover:opacity-70" style="color: var(--text-secondary);">{lang === 'th' ? 'คู่มือเที่ยวและสถานที่ใกล้เคียง' : lang === 'en' ? 'Travel guides & nearby sights' : '旅游攻略与周边景点'}</a></li>
-          <li><a href={`/${lang}/privacy-policy`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.privacy}</a></li>
-          <li><a href={`/${lang}/terms-of-service`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.terms}</a></li>
-          <li><a href={`/${lang}/cookie-settings`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.cookies}</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="mt-10 pt-6 border-t text-xs" style="border-color: var(--border-color); color: var(--text-muted);">
-      <p class="leading-relaxed" set:html={f.disclaimer}></p>
-      {f.dataSourceLabel && f.dataSource && (
-        <p class="mt-3 leading-relaxed"><span class="font-medium" style="color: var(--text-secondary);">{f.dataSourceLabel}：</span> <span set:html={f.dataSource}></span></p>
-      )}
-      {f.imageRights && (
-        <p class="mt-3 leading-relaxed"><span class="font-medium" style="color: var(--text-secondary);">© </span><span>{f.imageRights}</span></p>
-      )}
-      {f.licenseNote && (
-        <p class="mt-3 leading-relaxed">{f.licenseNote}</p>
-      )}
-    </div>
+<footer class="section-padding" style="background:var(--bg-tertiary);border-top:1px solid var(--border-color)">
+  <div class="max-w-6xl mx-auto px-4 text-sm space-y-2" style="color:var(--text-secondary)">
+    <p>© 2026 {copy.name} · {copy.rights}</p>
+    <p>{copy.note}</p>
   </div>
 </footer>
-)}

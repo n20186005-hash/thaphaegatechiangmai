@@ -30,7 +30,7 @@ export const placeProfiles:Record<string,PlaceProfile> = {
  'chiang-mai-city-arts-centre': {
   manager:t('ศูนย์ศิลปวัฒนธรรมเมืองเชียงใหม่เป็นส่วนหนึ่งของเครือข่ายศูนย์มรดกเมืองภายใต้เทศบาลนครเชียงใหม่','The Chiang Mai City Arts & Cultural Centre is part of the municipal City Heritage Centre network administered by Chiang Mai Municipality.','清迈城市艺术文化中心属于清迈市政府辖下的城市文化遗产中心体系。'),
   architecture:t('อาคารศาลากลางเก่าแสดงสถาปัตยกรรมราชการในเมืองเก่า ภายในใช้จัดนิทรรศการเมืองและวัฒนธรรมล้านนา','The former provincial hall is a notable civic building; its interior interprets the city’s history and Lanna culture.','旧省政厅建筑呈现历史行政建筑风貌，内部展示清迈城市发展及兰纳文化。'),
-  walking:t('อยู่ติดกับลานอนุสาวรีย์สามกษัตริย์ เข้าตามจุดจำหน่ายบัตรและเวลาเปิดที่ประกาศ','It borders the Three Kings Monument plaza; enter by the museum’s operating entrance during published hours.','紧邻三王纪念碑广场，按博物馆公告的开放时段及入口参观。'),
+  walking:t('จากประตูท่าแพเดินไปทางตะวันตกตามถนนราชดำเนิน แล้วมุ่งเหนือไปยังลานอนุสาวรีย์สามกษัตริย์ ศูนย์อยู่ข้างลาน ให้เข้าทางประตูพิพิธภัณฑ์ที่เปิดบริการ','From Tha Phae Gate, walk west along Ratchadamnoen Road, then turn north toward Three Kings Monument plaza. The cultural centre is beside the square; use the designated museum entrance.','从塔佩门沿拉差丹嫩路向西步行，再向北转往三王纪念碑广场；文化中心就在广场旁，请从博物馆指定入口进入。'),
   photography:t('ถ่ายรูปด้านนอกอาคารและหน้าต่างเก่า ส่วนภายในให้ปฏิบัติตามป้ายอนุญาต','Photograph the former government façade and windows outside; indoor photography depends on gallery rules.','可拍摄旧行政建筑外立面和窗户，馆内摄影应遵守展厅规定。'),
   facts:t('เป็นพิพิธภัณฑ์ประวัติศาสตร์เมือง ไม่ใช่ลานสาธารณะเปิดตลอดเวลา','A ticketed or scheduled museum experience rather than an always-open public square; confirm admission details.','这是按馆方时段运营的城市历史博物馆，并非全天开放的公共广场。') },
  'wat-lok-moli': {
