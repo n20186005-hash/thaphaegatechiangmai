@@ -6,6 +6,8 @@ import { attraction } from '../config';
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
 const imageRights = messages.footer?.imageRights;
+const { lang } = getI18n(Astro.url);
+const lightboxLabels = { th: ['ปิด', 'ภาพก่อนหน้า', 'ภาพถัดไป'], en: ['Close', 'Previous', 'Next'], zh: ['关闭', '上一张', '下一张'] }[lang] ?? ['Close', 'Previous', 'Next'];
 
 let photoFiles: string[] = [];
 try {
@@ -73,13 +75,13 @@ const photos = photoFiles.length > 0
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
-  <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label={lightboxLabels[0]}>✕</button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label={lightboxLabels[1]}>‹</button>
   <figure class="lightbox-figure">
     <img id="lightbox-img" src="" alt="" />
     <figcaption id="lightbox-caption"></figcaption>
   </figure>
-  <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+  <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label={lightboxLabels[2]}>›</button>
 </div>
 
 <script is:inline>

@@ -17,6 +17,8 @@ const profile = placeProfiles[guide.slug];
 const facts = visitorFacts[guide.slug];
 const gatePhotos = ['/gallery/tha-phae-gate-20.jpg','/gallery/tha-phae-gate-24.jpg','/gallery/tha-phae-gate-25.jpg'];
 const gatePhoto = gatePhotos[guides.findIndex(g => g.slug === guide.slug) % gatePhotos.length];
+const gatePhotoAlt = { th: 'ภาพประตูท่าแพและลานสาธารณะในเชียงใหม่', en: 'Tha Phae Gate brick wall and public square, Chiang Mai', zh: '清迈塔佩门红砖城墙与公共广场' }[lang];
+const gatePhotoCaption = { th: 'ประตูท่าแพ · เชียงใหม่', en: 'Tha Phae Gate · Chiang Mai', zh: '塔佩门 · 清迈' }[lang];
 const commonsPhoto: Record<string,string> = {
   'wat-chedi-luang': 'https://commons.wikimedia.org/wiki/Special:FilePath/Wat_Chedi_Luang,_Stupa,_Chiang_Mai,_Thailand.jpg',
   'wat-phra-singh': 'https://commons.wikimedia.org/wiki/Special:FilePath/Wat_Phra_Singh,_Chiang_Mai.jpg',
@@ -97,7 +99,7 @@ const themedSteps: Record<string,string[]> = {
       <a href={mapUrl} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-5 py-3 mt-6 font-semibold" style="background:var(--accent);color:white">📍 {ui.map} ↗</a>
       <p class="text-sm mt-3"><a href={mapUrl} target="_blank" rel="noopener noreferrer" style="color:var(--accent)">{detail.review} ↗</a></p>
     </header>
-    {photo && <figure class="mb-12"><img src={photo} alt={guide.kind === 'place' ? guide.title[lang] : 'Tha Phae Gate brick wall and public square, Chiang Mai'} loading="lazy" class="w-full max-h-[500px] object-cover rounded-2xl" /><figcaption class="text-sm mt-2" style="color:var(--text-secondary)">{guide.kind === 'place' ? guide.title[lang] : 'Tha Phae Gate · Chiang Mai'}</figcaption></figure>}
+    {photo && <figure class="mb-12"><img src={photo} alt={guide.kind === 'place' ? guide.title[lang] : gatePhotoAlt} loading="lazy" class="w-full max-h-[500px] object-cover rounded-2xl" /><figcaption class="text-sm mt-2" style="color:var(--text-secondary)">{guide.kind === 'place' ? guide.title[lang] : gatePhotoCaption}</figcaption></figure>}
     {secondaryPhotos[guide.slug]?.length > 0 && <div class="grid sm:grid-cols-2 gap-4 mb-12">{secondaryPhotos[guide.slug].map((src,index) => <figure><img src={src} alt={`${guide.title[lang]} — ${lang==='th'?'ภาพสถานที่จริง':lang==='en'?'on-location photograph':'景点实景'} ${index+2}`} loading="lazy" class="w-full h-60 object-cover rounded-xl" /><figcaption class="text-sm mt-2" style="color:var(--text-secondary)">{guide.title[lang]}</figcaption></figure>)}</div>}
     <div class="space-y-10 leading-relaxed">
       <section><h2 class="text-2xl font-semibold mb-4">{detail.intro}</h2><p>{note}</p><p class="mt-3" style="color:var(--text-secondary)">{guide.focus[lang]}</p></section>

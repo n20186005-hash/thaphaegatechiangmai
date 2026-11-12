@@ -1,7 +1,8 @@
 ---
 import { getI18n } from '../i18n/ui';
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const sp = messages.sitePlaques;
+const flipLabel = { th: 'แตะเพื่ออ่านคำอธิบาย', en: 'Tap to read explanation', zh: '点击查看说明' }[lang] ?? 'Tap to read explanation';
 const items = sp.items ?? [];
 const { embedded = false } = Astro.props;
 ---
@@ -47,18 +48,18 @@ const { embedded = false } = Astro.props;
       {items.map((it) => (
         <div class="flip-card min-h-[280px]" onclick="this.classList.toggle('is-flipped')">
           <div class="flip-card-inner shadow-sm hover:shadow-md transition-shadow rounded-2xl">
-            <!-- Front: Korean Plaque Visual -->
+            <!-- Front: Thai plaque text -->
             <article class="flip-card-front p-6 sm:p-8 border flex flex-col justify-center items-center text-center" style="background: var(--bg-primary); border-color: var(--border-color);">
               <span class="absolute top-2.5 right-3 text-[10px] tracking-[0.22em] uppercase opacity-30" aria-hidden="true">PLAQUE</span>
               <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4" style="background: var(--accent); color: #fff;">{it.badge}</span>
               <h4 class="font-semibold text-2xl mb-2" style="color: var(--text-primary);">{it.koTitle}</h4>
               <p class="text-sm" style="color: var(--text-tertiary);">{it.koTitleZh}</p>
               <div class="absolute bottom-6 text-[11px] opacity-40 uppercase tracking-widest flex items-center gap-1">
-                <span>🔄</span> Click to translate
+                <span>🔄</span> {flipLabel}
               </div>
             </article>
 
-            <!-- Back: Chinese Translation & Explanation -->
+            <!-- Back: Explanation in the selected language -->
             <article class="flip-card-back p-6 sm:p-8 border overflow-y-auto" style="background: var(--bg-tertiary); border-color: var(--border-color);">
               <h4 class="font-semibold text-lg mb-3" style="color: var(--text-primary);">{it.title}</h4>
               {it.location && (
@@ -92,7 +93,7 @@ const { embedded = false } = Astro.props;
               <h4 class="font-semibold text-2xl mb-2" style="color: var(--text-primary);">{it.koTitle}</h4>
               <p class="text-sm" style="color: var(--text-tertiary);">{it.koTitleZh}</p>
               <div class="absolute bottom-6 text-[11px] opacity-40 uppercase tracking-widest flex items-center gap-1">
-                <span>🔄</span> Click to translate
+                <span>🔄</span> {flipLabel}
               </div>
             </article>
 

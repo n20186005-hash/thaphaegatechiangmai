@@ -646,7 +646,7 @@
   "sitePlaques": {
     "title": "On-site plaques · Read the gate",
     "subtitle": "Bilingual Thai–English plaques stand near the gate; compare them on the spot.",
-    "intro": "Tap a card to read the Chinese explanation.",
+    "intro": "Tap a card to read the English explanation.",
     "locationLabel": "Location",
     "items": [
       {
@@ -960,7 +960,7 @@
         "url": "https://www.chiangmai.go.th"
       },
       {
-        "name": "Tourism Thailand (中文)",
+        "name": "Tourism Thailand (Chinese-language website)",
         "url": "https://www.thai.travel"
       },
       {
@@ -1014,7 +1014,7 @@
         "url": "https://www.chiangmai.go.th"
       },
       {
-        "name": "Tourism Thailand (中文)",
+        "name": "Tourism Thailand (Chinese-language website)",
         "url": "https://www.thai.travel"
       },
       {
