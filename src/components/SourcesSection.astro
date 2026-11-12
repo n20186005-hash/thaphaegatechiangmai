@@ -56,6 +56,7 @@ const footer = messages.footer;
       {footer.imageRights && <p>{footer.imageRights}</p>}
       {footer.licenseNote && <p>{footer.licenseNote}</p>}
       <nav aria-label={footer.legalLinksTitle} class="flex flex-wrap gap-x-5 gap-y-2 pt-3">
+        <a href={`/${lang}/about`} class="hover:underline" style="color:var(--accent)">{messages.mission.title}</a>
         <a href={`/${lang}/guides/`} class="hover:underline" style="color:var(--accent)">{lang === 'th' ? 'คู่มือเที่ยวและสถานที่ใกล้เคียง' : lang === 'en' ? 'Travel guides & nearby sights' : '旅游攻略与周边景点'}</a>
         <a href={`/${lang}/privacy-policy`} class="hover:underline" style="color:var(--accent)">{footer.privacy}</a>
         <a href={`/${lang}/terms-of-service`} class="hover:underline" style="color:var(--accent)">{footer.terms}</a>

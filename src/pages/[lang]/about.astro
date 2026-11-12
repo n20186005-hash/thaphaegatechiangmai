@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoticeBanner from '../../components/NoticeBanner.astro';
+import { getI18n, languagesList } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages } = getI18n(Astro.url);
+const mission = messages.mission;
+---
+
+<BaseLayout title={mission.title} description={messages.nonprofitBanner.text} path="about">
+  <section class="section-padding" style="background:var(--bg-secondary)">
+    <div class="max-w-3xl mx-auto px-4 space-y-6">
+      <a href={`/${lang}/`} class="text-sm hover:opacity-70" style="color:var(--accent)">← {messages.header.backToHome}</a>
+      <h1 class="font-display text-3xl sm:text-4xl font-semibold" style="color:var(--text-primary)">{mission.title}</h1>
+      <NoticeBanner />
+      <p class="text-base sm:text-lg leading-relaxed" style="color:var(--text-secondary)">{mission.text}</p>
+      <p class="text-sm leading-relaxed" style="color:var(--text-muted)">{messages.sources.disclaimer}</p>
+    </div>
+  </section>
+</BaseLayout>
